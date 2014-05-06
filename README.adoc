@@ -1,0 +1,36 @@
+= COMP603 (Compiler Design)
+
+== May 7
+
+=== Introduction
+
+. What's your name?
+. Why did you pick computer science?
+. What do you still want to learn and/or what do you aspire to do after graduation?
+. Tell us something nobody else knows about you.
+
+=== Syllabus
+
+=== Install Git and frontends
+
+Windows:: https://code.google.com/p/gitextensions/downloads/list[Install Git Extensions, MSysGit and KDiff3].
++
+NOTE: Stick to the default settings, but when asked, *choose OpenSSH (not PuTTY)*.
+
+Mac OS X:: http://rowanj.github.io/gitx/[Install GitX-dev].
++
+NOTE: Newer Macs ship with git; otherwise, http://git-scm.com/download/mac[install git] separately.
+
+Linux:: http://git-scm.com/download/linux[Install git] using your package manager. http://sourceforge.net/projects/qgit/[QGit, a git frontend] may also be available for your distribution.
++
+NOTE: Don't forget to use +sudo+ with your package manager.
+
+=== Setup your course repository
+
+All platforms:: Paste this into your terminal (Git Bash on Windows):
++
+----
+curl https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/starterupper.sh | sh
+----
++
+NOTE: Press +Insert+ to paste in Git Bash.
