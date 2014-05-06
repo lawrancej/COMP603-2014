@@ -9,7 +9,7 @@
 . What do you still want to learn and/or what do you aspire to do after graduation?
 . Tell us something nobody else knows about you.
 
-=== Syllabus
+=== https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/COMP603SyllabusLawrance.docx[Syllabus (Word document)]
 
 === Install Git and frontends
 
@@ -34,3 +34,4 @@ curl https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/starteruppe
 ----
 +
 NOTE: Press +Insert+ to paste in Git Bash.
+
