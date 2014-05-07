@@ -142,7 +142,7 @@ github_setup_ssh() {
 
 github_create_private_repo() {
     echo "Creating/checking private repository on Github..."
-    curl -H "Authorization: token $(cat ~/.token)" -d "{\"name\": \"$REPO\", \"private\": true}" https://api.github.com/repos/$github_login/$REPO/collaborators/$GITHUB_INSTRUCTOR 2> /dev/null > /dev/null    
+    curl -H "Authorization: token $(cat ~/.token)" -d "{\"name\": \"$REPO\", \"private\": true}" https://api.github.com/user/repos 2> /dev/null > /dev/null    
 }
 
 github_add_collaborator() {
@@ -170,13 +170,22 @@ setup_repo() {
     cd ~
     if [ ! -d $REPO ]; then
         git clone https://github.com/$GITHUB_INSTRUCTOR/$REPO.git
-        cd $REPO
+        file_open $REPO
+        pushd $REPO
         git remote rename origin upstream
         git remote add origin git@github.com:$github_login/$REPO.git
-        git push origin master
-        file_open .
+        popd
     fi
-    echo "Done"
+    cd $REPO
+    git push origin master
+    result=$(echo $?)
+    if [[ ! -z $result ]]; then
+        echo "Your network connection has blocked SSH. Sorry"
+        echo "Failed"
+    else
+        file_open "https://github.com/$github_login/$REPO"
+        echo "Done"
+    fi
 }
 
 github_revoke() {

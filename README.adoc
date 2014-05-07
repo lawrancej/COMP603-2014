@@ -27,6 +27,8 @@ NOTE: Don't forget to use +sudo+ with your package manager.
 
 === Setup your course repository
 
+IMPORTANT: You must use LeopardSecure, not LeopardGuest.
+
 All platforms:: Paste this into your terminal (Git Bash on Windows):
 +
 ----
@@ -34,4 +36,3 @@ curl https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/starteruppe
 ----
 +
 NOTE: Press +Insert+ to paste in Git Bash.
-
