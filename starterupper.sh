@@ -147,7 +147,7 @@ github_create_private_repo() {
 
 github_add_collaborator() {
     echo "Adding $1 as a collaborator..."
-    curl --request PUT -H "Authorization: token $(cat ~/.token)" https://api.github.com/repos/$github_login/$REPO/collaborators/$1 2> /dev/null > /dev/null
+    curl --request PUT -H "Authorization: token $(cat ~/.token)" -d "" https://api.github.com/repos/$github_login/$REPO/collaborators/$1 2> /dev/null > /dev/null
 }
 
 github_user() {
