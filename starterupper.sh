@@ -193,8 +193,11 @@ clean() {
     rm -f ~/.token
 }
 
-configure_git
-github_setup
+if [ $# == 0 ]; then
+    configure_git
+    github_setup
+elif [[ $1 == "clean" ]]; then
+    clean
+fi
 
 # github_user
-# clean
