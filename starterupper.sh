@@ -179,7 +179,7 @@ setup_repo() {
     cd $REPO
     git push origin master
     result=$(echo $?)
-    if [[ ! -z $result ]]; then
+    if [[ $result != 0 ]]; then
         echo "Your network connection has blocked SSH. Sorry"
         echo "Failed"
     else
