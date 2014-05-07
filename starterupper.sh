@@ -18,7 +18,7 @@ file_open() {
         msys | cygwin ) echo "Opening $1"; sleep 1; start "$1" ;;
         linux* ) echo "Opening $1"; sleep 1; gnome-open "$1" ;;
         darwin* ) echo "Opening $1"; sleep 1; open "$1" ;;
-        *) echo "Open $1 in your web browser." ;;
+        *) echo "Please open $1" ;;
     esac
     next_step
 }
@@ -174,6 +174,7 @@ setup_repo() {
         git remote rename origin upstream
         git remote add origin git@github.com:$github_login/$REPO.git
         git push origin master
+        file_open .
     fi
     echo "Done"
 }
