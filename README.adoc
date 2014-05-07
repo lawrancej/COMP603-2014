@@ -11,6 +11,9 @@
 
 === https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/COMP603SyllabusLawrance.docx[Syllabus (Word document)]
 
+* Even though you may develop mobile/web apps or games, compilers are relevant to your career.
+* Writing compilers give you superpowers: (e.g., http://www.robovm.org/[RoboVM], https://github.com/kripken/emscripten/wiki[emscripten])
+
 === Install Git and frontends
 
 Windows:: https://code.google.com/p/gitextensions/downloads/list[Install Git Extensions, MSysGit and KDiff3].
