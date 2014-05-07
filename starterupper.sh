@@ -2,7 +2,7 @@
 
 # The instructor's Github username
 GITHUB_INSTRUCTOR=lawrancej
-# The repository to clone as upstream
+# The repository to clone as upstream (NO SPACES)
 REPO=COMP603-2014
 
 # Utilities
@@ -72,7 +72,7 @@ github_join() {
             printf "Join Github using your school email address. "
             sleep 1
             file_open "https://github.com/join"
-            echo "Open your school email and verify your email with Github."
+            echo "Open your school email inbox and verify your email with Github."
             sleep 2
             next_step
         fi
@@ -168,11 +168,13 @@ github_setup() {
 setup_repo() {
     echo "Configuring repository $REPO..."
     cd ~
-    git clone "https://github.com/$GITHUB_INSTRUCTOR/$REPO.git"
-    cd $REPO
-    git remote rename origin upstream
-    git remote add origin git@github.com:$github_login/$REPO.git
-    git push origin master
+    if [ ! -d $REPO ]; then
+        git clone https://github.com/$GITHUB_INSTRUCTOR/$REPO.git
+        cd $REPO
+        git remote rename origin upstream
+        git remote add origin git@github.com:$github_login/$REPO.git
+        git push origin master
+    fi
     echo "Done"
 }
 
@@ -186,11 +188,13 @@ clean() {
     github_revoke
     git config --global --unset user.name
     git config --global --unset user.email
-    git config --global --unset gihub.login
-    rm ~/.ssh/id_rsa*
-    rm ~/.token
+    git config --global --unset github.login
+    rm -f ~/.ssh/id_rsa*
+    rm -f ~/.token
 }
 
 configure_git
 github_setup
+
 # github_user
+# clean
