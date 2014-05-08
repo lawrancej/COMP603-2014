@@ -29,17 +29,24 @@ file_open() {
 # Ask user to set a key in ~/.gitconfig if it's not already set.
 # $1 is the key
 # $2 is the prompt
+# $3 is an example
 set_key() {
     value=$(git config --global $1)
+    if [[ ! -z "$value" ]]; then
+        read -p "Is $value your $2 (Yes [default] or no)? " yn < /dev/tty
+        if [[ $yn == [Yy]* ]]; then
+            value=''
+        fi
+    fi
     while [ -z "$value" ]; do
-        read -p "$2: " value < /dev/tty
+        read -p "Enter your $2 (e.g., $3): " value < /dev/tty
         git config --global $1 "$value"
     done
 }
 
 configure_git() {
-    set_key user.name "Enter your full name (e.g., Jane Smith)"
-    set_key user.email "Enter your school email address (e.g., smithj@wit.edu)"
+    set_key user.name "full name" "Jane Smith"
+    set_key user.email "school email address" "smithj@wit.edu"
 }
 
 # SSH functions
@@ -47,8 +54,7 @@ configure_git() {
 
 generate_key() {
     while [[ ! -f ~/.ssh/id_rsa.pub ]]; do
-        echo "Push enter to accept defaults. Remember your passphrase (or just press enter)."
-        ssh-keygen -t rsa < /dev/tty
+        printf "\n" | ssh-keygen -t rsa -N '' # Default location, no phassphrase, no questions asked
     done
 }
 
@@ -66,9 +72,9 @@ copy_key_to_clipboard() {
 
 github_join() {
     if [ -z $(git config --global github.login) ]; then
-        read -p "Do you have a Github account [y/N]? " yn < /dev/tty
+        read -p "Do you have a Github account (yes or No [default])? " has_github_account < /dev/tty
         # Let's assume that they don't by default
-        if [[ $yn != [Yy]* ]]; then
+        if [[ $has_github_account != [Yy]* ]]; then
             printf "Join Github using your school email address. "
             sleep 1
             file_open "https://github.com/join"
@@ -82,8 +88,8 @@ github_join() {
 # Wow, it's complicated
 # Sets $github_login and generates ~/.token with authentication token
 github_authenticate() {
+    set_key github.login "Github username" "smithj"
     if [[ ! -f ~/.token ]]; then
-        set_key github.login "Enter your Github username (e.g., smithj)"
         github_login=$(git config --global github.login)
         token="HTTP/1.1 401 Unauthorized"
         code=''
@@ -116,12 +122,6 @@ github_authenticate() {
     github_login=$(git config --global github.login)
 }
 
-github_get_discount() {
-    echo "Request an individual student discount. "
-    sleep 1
-    file_open "https://education.github.com/discount_requests/new"
-}
-
 github_share_key() {
     echo "Sharing public key..."
     curl -i -H "Authorization: token $(cat ~/.token)" -d "{\"title\": \"$(hostname)\", \"key\": \"$(cat ~/.ssh/id_rsa.pub)\"}" https://api.github.com/user/keys 2> /dev/null > /dev/null
@@ -141,8 +141,28 @@ github_setup_ssh() {
 }
 
 github_create_private_repo() {
-    echo "Creating/checking private repository on Github..."
-    curl -H "Authorization: token $(cat ~/.token)" -d "{\"name\": \"$REPO\", \"private\": true}" https://api.github.com/user/repos 2> /dev/null > /dev/null    
+    result=$(curl -H "Authorization: token $(cat ~/.token)" https://api.github.com/repos/$github_login/$REPO 2> /dev/null)
+    if [[ ! -z $(echo $result | grep "Not Found") ]]; then
+        echo "Creating private repository $github_login/$REPO on Github..."
+        result=$(curl -H "Authorization: token $(cat ~/.token)" -d "{\"name\": \"$REPO\", \"private\": true}" https://api.github.com/user/repos 2> /dev/null)
+        if [[ ! -z $(echo $result | grep "over your quota" ) ]]; then
+            echo "Unable to create private repository. Request an individual student discount."
+            sleep 1
+            file_open "https://education.github.com/discount_requests/new"
+            result=$(curl -H "Authorization: token $(cat ~/.token)" -d "{\"name\": \"$REPO\", \"private\": true}" https://api.github.com/user/repos 2> /dev/null)
+            if [[ ! -z $(echo $result | grep "over your quota" ) ]]; then
+                echo "Unable to create private repository because you are over quota."
+                echo "Wait for the discount and try again."
+                if [[ $has_github_account == [Yy]* ]]; then
+                    echo "You may need to free up some private repositories."
+                    sleep 1
+                    file_open "https://github.com/settings/repositories"
+                fi
+                echo "Failed"
+                exit 1
+            fi
+        fi
+    fi
 }
 
 github_add_collaborator() {
@@ -157,7 +177,6 @@ github_user() {
 github_setup() {
     github_join
     github_authenticate
-    github_get_discount
     github_set_name
     github_setup_ssh
     github_create_private_repo
@@ -171,17 +190,17 @@ setup_repo() {
     if [ ! -d $REPO ]; then
         git clone https://github.com/$GITHUB_INSTRUCTOR/$REPO.git
         file_open $REPO
-        pushd $REPO
+        cd $REPO
         git remote rename origin upstream
         git remote add origin git@github.com:$github_login/$REPO.git
-        popd
+        cd ~
     fi
     cd $REPO
     git push origin master
     result=$(echo $?)
     if [[ $result != 0 ]]; then
-        echo "Your network connection has blocked SSH. Sorry"
-        echo "Failed"
+        echo "Unable to push. Your network blocked SSH."
+        echo "Failed. Try again when you have full network access."
     else
         file_open "https://github.com/$github_login/$REPO"
         echo "Done"
