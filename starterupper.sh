@@ -53,9 +53,9 @@ configure_git() {
 # ---------------------------------------------------------------------
 
 generate_key() {
-    while [[ ! -f ~/.ssh/id_rsa.pub ]]; do
+    if [[ ! -f ~/.ssh/id_rsa.pub ]]; then
         printf "\n" | ssh-keygen -t rsa -N '' # Default location, no phassphrase, no questions asked
-    done
+    fi
 }
 
 copy_key_to_clipboard() {
@@ -89,8 +89,8 @@ github_join() {
 # Sets $github_login and generates ~/.token with authentication token
 github_authenticate() {
     set_key github.login "Github username" "smithj"
+    github_login=$(git config --global github.login)
     if [[ ! -f ~/.token ]]; then
-        github_login=$(git config --global github.login)
         token="HTTP/1.1 401 Unauthorized"
         code=''
         password=''
@@ -118,8 +118,6 @@ github_authenticate() {
             exit
         fi
     fi
-    # Set this variable in case we were interrupted unexpectedly
-    github_login=$(git config --global github.login)
 }
 
 github_share_key() {
@@ -185,16 +183,16 @@ github_setup() {
 }
 
 setup_repo() {
-    echo "Configuring repository $REPO..."
     cd ~
     if [ ! -d $REPO ]; then
         git clone https://github.com/$GITHUB_INSTRUCTOR/$REPO.git
-        file_open $REPO
         cd $REPO
+        echo "Configuring remotes..."
         git remote rename origin upstream
         git remote add origin git@github.com:$github_login/$REPO.git
         cd ~
     fi
+    file_open $REPO
     cd $REPO
     git push origin master
     result=$(echo $?)
