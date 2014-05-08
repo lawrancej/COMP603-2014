@@ -22,7 +22,7 @@ NOTE: Stick to the default settings, but when asked, *choose OpenSSH (not PuTTY)
 
 Mac OS X:: http://rowanj.github.io/gitx/[Install GitX-dev].
 +
-NOTE: Newer Macs ship with git; otherwise, http://git-scm.com/download/mac[install git] separately.
+NOTE: https://developer.apple.com/xcode/downloads/[XCode developer tools] ships with git; otherwise, http://git-scm.com/download/mac[install the latest git from here].
 
 Linux:: http://git-scm.com/download/linux[Install git] using your package manager. http://sourceforge.net/projects/qgit/[QGit, a git frontend] may also be available for your distribution.
 +
