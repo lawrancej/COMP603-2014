@@ -49,6 +49,18 @@ configure_git() {
     set_key user.email "school email address" "smithj@wit.edu"
 }
 
+# Setup remotes for repository
+# $1 is the SSH origin URL
+configure_remotes() {
+    cd ~/$REPO
+    echo "Configuring remotes..."
+    git remote rename origin upstream
+    git remote add origin $1
+    git config branch.master.remote origin
+    git config branch.master.merge refs/heads/master
+    cd ~
+}
+
 # SSH functions
 # ---------------------------------------------------------------------
 
@@ -109,13 +121,16 @@ github_authenticate() {
                 read -p "Enter Github two-factor authentication code: " code < /dev/tty
             fi
         done
-        if [[ ! -z $(echo $token | grep "HTTP/1.1 201" ) ]]; then
+        if [[ ! -z $(echo $token | grep "HTTP/... 20." ) ]]; then
+            # Extract token and save to ~/.token
             token=$(echo $token | tr '"' '\n' | grep -E '[0-9a-f]{40}')
             echo $token > ~/.token
             echo "Authenticated!"
         else
+            printf "Error: "
+            echo $token | grep "HTTP/..."
             echo "Sorry, try again later."
-            exit
+            exit 1
         fi
     fi
 }
@@ -194,11 +209,7 @@ setup_repo() {
     cd ~
     if [ ! -d $REPO ]; then
         git clone https://github.com/$GITHUB_INSTRUCTOR/$REPO.git
-        cd $REPO
-        echo "Configuring remotes..."
-        git remote rename origin upstream
-        git remote add origin git@github.com:$github_login/$REPO.git
-        cd ~
+        configure_remotes "git@github.com:$github_login/$REPO.git"
     fi
     file_open $REPO
     cd $REPO
