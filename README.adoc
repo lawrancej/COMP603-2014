@@ -8,7 +8,7 @@ IMPORTANT: If you haven't already done so by now, install git and frontends, and
 
 NOTE: Don't worry, this isn't graded (but please do it anyway)
 
-Pretend we're taking a closed-book exam. Answer these questions.
+Pretend we're taking a closed-book exam. Answer these questions in a file called +prequiz.txt+ in your repo.
 
 . What is the difference between a set, a bag, and a sequence?
 . What is a language in terms of sets and sequences?
