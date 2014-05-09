@@ -2,7 +2,7 @@
 
 == May 9
 
-IMPORTANT: If you haven't already done so by now, install git and frontends, and setup your course repository.
+IMPORTANT: If you haven't already done so by now, <<install-git,install git and frontends>>, and then <<setup-repo,setup your course repository>>.
 
 === Pre-quiz (How much theory do you know?)
 
@@ -11,26 +11,24 @@ NOTE: Don't worry, this isn't graded (but please do it anyway)
 Pretend we're taking a closed-book exam. Answer these questions in a file called +prequiz.txt+ in your repo.
 
 . What is the difference between a set, a bag, and a sequence?
-. What is a language in terms of sets and sequences?
-. What is a compiler?
+. What is a language (in terms of sets and sequences)?
+. What is a compiler? Name some.
 . What is the derivative of a language?
 . What is a regular expression?
-. What is a finite automaton?
-. What is the difference between an NFA and a DFA?
-. What is a grammar?
-. What is the difference between LL(k) and LR(k)?
-. What is the difference between recursive descent parsing, shift-reduce parsing and parser combinators?
+. What is a finite automaton, and what is the difference between an NFA and a DFA?
+. What is a grammar, and what is the difference between regular grammars, context-free grammars, LL(k) and LR(k)?
+. What is the difference between derivative parsing, recursive-descent parsing, shift-reduce parsing and parser combinators?
 . What is a visitor?
+. What is the difference between a parse tree and an abstract syntax tree?
 . Name some optimizations.
-. What is an abstract syntax tree?
 . What questions do you have for me?
 
-While we're here, let's stage, commit and push our stuff off to check git is working.
+Now, let's stage, commit and push our stuff off to ensure git is working.
 
 ----
-git add prequiz.txt
-git commit -m "Prequiz answers"
-git push origin master
+git add prequiz.txt             # Stage prequiz.txt (include in next commit)
+git commit -m "Prequiz answers" # Commit changes with a message
+git push origin master          # Send work to your private repository
 ----
 
 == May 7
@@ -48,7 +46,7 @@ git push origin master
 * Writing compilers give you superpowers: (e.g., http://www.robovm.org/[RoboVM], https://github.com/kripken/emscripten/wiki[emscripten])
 
 === Install Git and frontends
-
+[[install-git]]
 Windows:: https://code.google.com/p/gitextensions/downloads/list[Install Git Extensions, MSysGit and KDiff3].
 +
 NOTE: Stick to the default settings, but when asked, *choose OpenSSH (not PuTTY)*.
@@ -62,7 +60,7 @@ Linux:: http://git-scm.com/download/linux[Install git] using your package manage
 NOTE: Don't forget to use +sudo+ with your package manager.
 
 === Setup your course repository
-
+[[setup-repo]]
 IMPORTANT: You must use LeopardSecure, not LeopardGuest.
 
 All platforms:: Paste this into your terminal (Git Bash on Windows):
