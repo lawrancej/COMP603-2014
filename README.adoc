@@ -23,6 +23,15 @@ Pretend we're taking a closed-book exam. Answer these questions in a file called
 . What is a visitor?
 . Name some optimizations.
 . What is an abstract syntax tree?
+. What questions do you have for me?
+
+While we're here, let's stage, commit and push our stuff off to check git is working.
+
+----
+git add prequiz.txt
+git commit -m "Prequiz answers"
+git push origin master
+----
 
 == May 7
 
