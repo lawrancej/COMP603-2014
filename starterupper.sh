@@ -106,7 +106,7 @@ github_authenticate() {
                 sleep 3
             fi
             if [[ ! -z $(echo $token | grep "two-factor" ) ]]; then
-                read -s -p "Enter Github two-factor authentication code: " code < /dev/tty
+                read -p "Enter Github two-factor authentication code: " code < /dev/tty
             fi
         done
         if [[ ! -z $(echo $token | grep "HTTP/1.1 201" ) ]]; then
@@ -168,6 +168,14 @@ github_add_collaborator() {
     curl --request PUT -H "Authorization: token $(cat ~/.token)" -d "" https://api.github.com/repos/$github_login/$REPO/collaborators/$1 2> /dev/null > /dev/null
 }
 
+github_add_collaborators() {
+    cd ~/$REPO
+    for repository in $(curl -i -H "Authorization: token $(cat ~/.token)" https://api.github.com/user/repos?type=member\&sort=created\&page=1 2> /dev/null | grep "full_name.*$REPO" | sed s/.*full_name....// | sed s/..$//); do
+        git remote add ${repository%/*} git@github.com:$repository.git
+    done
+    git fetch --all
+}
+
 github_user() {
     curl -H "Authorization: token $(cat ~/.token)" https://api.github.com/user 2> /dev/null
 }
@@ -225,6 +233,8 @@ if [ $# == 0 ]; then
     github_setup
 elif [[ $1 == "clean" ]]; then
     clean
+elif [[ $1 == "collaborators" ]]; then
+    github_add_collaborators
 fi
 
 # github_user
