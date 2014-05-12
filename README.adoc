@@ -1,5 +1,23 @@
 = COMP603 (Compiler Design)
 
+== May 12
+
+Cheat at crosswords (and learn about merge conflicts), the easy way!
+
+. http://puzzles.about.com/library/features/dailyxwd/qprmon.htm[Open this crossword]
+. Pull from upstream
++
+----
+cd ~/COMP603-2014
+git pull upstream master
+git mergetool
+----
+. Find words that match something interesting, for example:
++
+----
+grep foo... american-english.txt
+----
+
 == May 9
 
 IMPORTANT: If you haven't already done so by now, <<install-git,install git and frontends>>, and then <<setup-repo,setup your course repository>>.
