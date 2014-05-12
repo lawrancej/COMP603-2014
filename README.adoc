@@ -22,7 +22,7 @@ grep foo... american-english.txt
 
 === A case for Theory of Computation
 
-WARNING: Theory of Computation ahead.
+WARNING: Theory of Computation ahead
 
 . The first compiler (for Fortran) took 18 man-years of effort to produce back in the 1950s.
 . CS theory has enabled CS undergraduates understand how to construct compilers within a semester.
@@ -39,12 +39,37 @@ You've had experience with the most primitive languages (regular languages) and 
 
 Regular expressions define regular languages using only three primitives and three rules:
 
-Empty Set:: Reject everything.
-Empty String:: Match the empty string (+""+).
-Symbol:: Match a single character (e.g., +a+).
-Sequence:: Match one regular expression followed by one after another (e.g., if +a+ and +b+ are regular expressions, +ab+ matches +a+ followed by +b+).
-Alternation:: Match either one regular expression or another (e.g., if +a+ and +b+ are regular expressions, +a|b+ matches +a+ or +b+).
-Kleene Star:: Match a regular expression zero or more times (e.g., if +a+ is a regular expression, +a*+ matches +a+ zero or more times).
+[cols="3", options="header"]
+|===
+|Name
+|Meaning
+|Example
+
+|*Empty Set*
+|Reject everything.
+|{}
+
+|*Empty String*
+|Match the empty string.
+|{+""+}
+
+|*Symbol*
+|Match a single character.
+|{+'a'+}
+
+|*Sequence*
+|Match one regular expression followed by one after another.
+|If +a+ and +b+ are regular expressions, +ab+ matches +a+ followed by +b+
+
+|*Alternation*
+|Match either one regular expression or another.
+|If +a+ and +b+ are regular expressions, +a\|b+ matches {+a+, +b+}.
+
+|*Kleene Star*
+|Match a regular expression zero or more times.
+|If +a+ is a regular expression, +a*+ matches {+""+,+a+,+aa+,+aaa+,...}
+
+|===
 
 == May 9
 
