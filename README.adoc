@@ -12,7 +12,7 @@ Cheat at crosswords (and learn about merge conflicts), the easy way!
 ----
 cd ~/COMP603-2014         # Go to your repo first
 git pull upstream master  # Pull (fetch and merge) the latest and greatest from me
-git mergetool             # Use KDiff3 to merge my stuff in.
+git mergetool             # Use KDiff3 to merge my stuff in (if you have a conflict)
 ----
 . Find words that match something interesting, for example:
 +
