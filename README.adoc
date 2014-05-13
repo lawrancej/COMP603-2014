@@ -51,7 +51,7 @@ NOTE: If working in a pair, go to your github repository settings (on the right 
   * https://github.com/llvm-mirror/llvm[LLVM (Compiler for C/C++)]
   * https://github.com/openjdk-mirror/jdk7u-jdk[OpenJDK (Compiler and runtime for Java)]
   * https://github.com/python/cpython[CPython]
-  * https://github.com/tycho/pypy[PyPy]
+  * https://bitbucket.org/pypy/pypy[PyPy]
   * https://github.com/LuaDist/lua[Lua]
   * https://github.com/ghc/ghc[GHC source (Haskell)]
   * https://github.com/ghcjs/ghcjs[GHCJS (Haskell to Javascript compiler)]
