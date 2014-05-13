@@ -40,7 +40,9 @@ Compilers translate source language(s) to target language(s), and typically cons
 
 === Lab 1
 
-Individually (or in pairs):
+Do this individually, or in pairs.
+
+NOTE: If working in a pair, go to your github repository settings (on the right side) and add the other person as a collaborator. Then, in your local git repository, add the collaborator's repository as a remote, using +git remote add 'COLLABORATOR' 'SSH_URL'+. Then +git fetch --all+. *DO NOT* push to your collaborator's repository, otherwise they'll be forced to merge in your changes before they can push. Always push to +origin+ (your github repository).
 
 . Choose a single compiler implementation to review (suggestions welcome!)
 
@@ -57,6 +59,7 @@ Individually (or in pairs):
   * https://github.com/mono/mono[C# compiler and runtime]
 
 . Identify which files/functions are responsible for each phase in the compiler source.
+. What was the most ridiculous thing you found? (funny comments? awful code?)
 . Take notes along the way (if you find something that's unrelated to a compiler phase, try to infer what it's doing).
 . Write up your findings in a short document and post to your repository (no more than two pages, please). For example:
 +
