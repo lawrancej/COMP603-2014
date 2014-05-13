@@ -2,7 +2,7 @@
 
 == May 13
 
-Compiler translate source language(s) to target language(s), and typically consist of the following 'phases':
+Compilers translate source language(s) to target language(s), and typically consist of the following 'phases':
 
 [cols="4", options="header"]
 |===
