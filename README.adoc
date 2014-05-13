@@ -1,5 +1,62 @@
 = COMP603 (Compiler Design)
 
+== May 13
+
+Compiler translate source language(s) to target language(s), and typically consist of the following 'phases':
+
+[cols="4", options="header"]
+|===
+|Phase
+|Description
+|Input
+|Output
+
+|*Scanning / Tokenization*
+|Break source code up into small chunks (tokens) such as identifiers, reserved words, operators, etc
+|Source code
+|Token stream
+
+|*Parsing*
+|Check the syntax of the source code
+|Token stream
+|Parse tree
+
+|*Translation*
+|Translate low level syntax into high-level abstract syntax tree
+|Parse tree
+|Abstract syntax tree, symbol table
+
+|*Optimization*
+|Improve performance or structure
+|Abstract syntax tree, symbol table
+|Abstract synatx tree, symbol table
+
+|*Code generation*
+|Traverse the AST to generate code.
+|Abstract syntax tree, symbol table
+|Target code
+
+|===
+
+=== Lab 1
+
+Individually (or in pairs):
+
+. Choose a single compiler implementation to review (suggestions welcome!)
+.. https://github.com/chaoslawful/tcc[Tiny C compiler]
+.. https://github.com/mirrors/gcc[GCC (Compiler for C/C++)]
+.. https://github.com/llvm-mirror/llvm[LLVM (Compiler for C/C++)]
+.. https://github.com/openjdk-mirror/jdk7u-jdk[OpenJDK (Compiler and runtime for Java)]
+.. https://github.com/python/cpython[CPython]
+.. https://github.com/tycho/pypy[PyPy]
+.. https://github.com/LuaDist/lua[Lua]
+.. https://github.com/ghc/ghc[GHC source (Haskell)]
+.. https://github.com/ghcjs/ghcjs[GHCJS (Haskell to Javascript compiler)]
+.. https://github.com/mozilla/rhino[Java implementation of Javascript]
+.. https://github.com/mono/mono[C# compiler and runtime]
+. Identify which files are responsible for each phase in the compiler source.
+. Write up your findings in a short document and post to your repository (no more than two pages, please).
+
 == May 12
 
 === Warm up
@@ -30,7 +87,7 @@ WARNING: Theory of Computation ahead
 === A hierarchy of languages
 
 Even though languages are sets of strings, it'd be difficult to define useful languages by enumerating all the strings in the set.
-Therefore, CS theorists and mathematicians have developed handy short-cuts to define languages.
+Therefore, CS theorists and mathematicians have developed handy short-cuts (formal grammars, state machines, etc.) to define languages.
 Noam Chomsky categorized languages into a http://en.wikipedia.org/wiki/Chomsky_hierarchy[hierarchy that bears his name].
 
 You've had experience with the most primitive languages (regular languages) and the most complex (recursively enumerable).
