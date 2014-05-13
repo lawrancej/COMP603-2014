@@ -43,17 +43,19 @@ Compilers translate source language(s) to target language(s), and typically cons
 Individually (or in pairs):
 
 . Choose a single compiler implementation to review (suggestions welcome!)
-.. https://github.com/chaoslawful/tcc[Tiny C compiler]
-.. https://github.com/mirrors/gcc[GCC (Compiler for C/C++)]
-.. https://github.com/llvm-mirror/llvm[LLVM (Compiler for C/C++)]
-.. https://github.com/openjdk-mirror/jdk7u-jdk[OpenJDK (Compiler and runtime for Java)]
-.. https://github.com/python/cpython[CPython]
-.. https://github.com/tycho/pypy[PyPy]
-.. https://github.com/LuaDist/lua[Lua]
-.. https://github.com/ghc/ghc[GHC source (Haskell)]
-.. https://github.com/ghcjs/ghcjs[GHCJS (Haskell to Javascript compiler)]
-.. https://github.com/mozilla/rhino[Java implementation of Javascript]
-.. https://github.com/mono/mono[C# compiler and runtime]
+
+  * https://github.com/chaoslawful/tcc[Tiny C compiler]
+  * https://github.com/mirrors/gcc[GCC (Compiler for C/C++)]
+  * https://github.com/llvm-mirror/llvm[LLVM (Compiler for C/C++)]
+  * https://github.com/openjdk-mirror/jdk7u-jdk[OpenJDK (Compiler and runtime for Java)]
+  * https://github.com/python/cpython[CPython]
+  * https://github.com/tycho/pypy[PyPy]
+  * https://github.com/LuaDist/lua[Lua]
+  * https://github.com/ghc/ghc[GHC source (Haskell)]
+  * https://github.com/ghcjs/ghcjs[GHCJS (Haskell to Javascript compiler)]
+  * https://github.com/mozilla/rhino[Java implementation of Javascript]
+  * https://github.com/mono/mono[C# compiler and runtime]
+
 . Identify which files are responsible for each phase in the compiler source.
 . Write up your findings in a short document and post to your repository (no more than two pages, please).
 
