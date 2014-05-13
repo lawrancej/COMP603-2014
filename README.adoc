@@ -12,7 +12,7 @@ Compilers translate source language(s) to target language(s), and typically cons
 |Output
 
 |*Scanning / Tokenization*
-|Break source code up into small chunks (tokens) such as identifiers, reserved words, operators, etc
+|Break source code up into small chunks (tokens) such as identifiers, reserved words, literals, operators, etc.
 |Source code
 |Token stream
 
