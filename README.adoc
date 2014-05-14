@@ -13,13 +13,13 @@ echo 'deadbeef' | sed -e 's/^\([0-9a-f][0-9a-f]*\)$/Hex: \1/'
 echo 'deadhorse' | sed -e 's/^\([0-9a-f][0-9a-f]*\)$/Hex: \1/'
 ----
 
-With somebody sitting nearby, read the commands carefully and discuss these questions.
+With somebody sitting nearby, read the commands carefully and discuss these questions. 'Hint': +sed -e s/'REGEX'/'REPLACEMENT'/+
 
 . How do you think it works?
 . What do you think +\w+ means?
 . What do +\1+, +\2+ and +\3+ mean?
 . What does +[0-9a-f]+ mean?
-. *Challenge*: Can you write a sed command to match only identifiers in, say, C/C++ or Java? Don't worry about reserved words.
+. *Challenge*: Can you write a sed command to match only identifiers in, say, C/C++ or Java? Don't worry about reserved words. 'Hint': massage the last regex into something appropriate.
 
 === Regular Expressions and Finite State Machines
 
