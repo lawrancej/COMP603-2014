@@ -7,13 +7,13 @@
 Consider the following (fire up your command line and try these out):
 
 ----
-echo "Joey Lawrance" | sed -e 's/\(\w\w*\).*/Hello, \1!/'
-echo "lawrancej@wit.edu" | sed 's/\(.*\)@\(.*\)\.\(.*\)/\1 at \2 dot \3/'
-echo "deadbeef" | sed -e 's/^\([a-f][a-f]*\)$/Hex: \1/'
-echo "deadhorse" | sed -e 's/^\([a-f][a-f]*\)$/Hex: \1/'
+echo 'Joey Lawrance' | sed -e 's/\(\w\w*\).*/Hello, \1!/'
+echo 'lawrancej@wit.edu' | sed 's/\(.*\)@\(.*\)\.\(.*\)/\1 at \2 dot \3/'
+echo 'deadbeef' | sed -e 's/^\([0-9a-f][0-9a-f]*\)$/Hex: \1/'
+echo 'deadhorse' | sed -e 's/^\([0-9a-f][0-9a-f]*\)$/Hex: \1/'
 ----
 
-With somebody sitting nearby, read the commands carefully.
+With somebody sitting nearby, read the commands carefully and discuss these questions.
 
 . How do you think it works?
 . What do you think +\w+ means?
