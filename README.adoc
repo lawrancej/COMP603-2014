@@ -1,5 +1,30 @@
 = COMP603 (Compiler Design)
 
+== May 14
+
+=== Warm up
+
+Consider the following (fire up your command line and try these out):
+
+----
+echo "Joey Lawrance" | sed -e 's/\(\w\w*\).*/Hello, \1!/'
+echo "lawrancej@wit.edu" | sed 's/\(.*\)@\(.*\)\.\(.*\)/\1 at \2 dot \3/'
+echo "deadbeef" | sed -e 's/^\([a-f][a-f]*\)$/Hex: \1/'
+echo "deadhorse" | sed -e 's/^\([a-f][a-f]*\)$/Hex: \1/'
+----
+
+With somebody sitting nearby, read the commands carefully.
+
+. How do you think it works?
+. What do you think +\w+ means?
+. What do +\1+, +\2+ and +\3+ mean?
+. *Challenge*: Can you write a sed command to match only identifiers in, say, C/C++ or Java?
+. *Challenge*: Can you write finite state machines that correspond to the regular expressions above?
+
+=== Regexes, State Machines and Derivatives, Oh My!
+
+Let's talk about finite state machines and derivatives
+
 == May 13
 
 Compilers translate source language(s) to target language(s), and typically consist of the following 'phases':
@@ -156,6 +181,9 @@ NOTE: Don't worry, this isn't graded (but please do it anyway)
 Pretend we're taking a closed-book exam. Answer these questions in a file called +prequiz.txt+ in your repo.
 
 . What is the difference between a set, a bag, and a sequence?
++
+Sets, bags and sequences are all collections of items. Sets are unordered collections of unique items, bags are unordered collections of potentially duplicated items, and sequences are ordered collections of potentially duplicated items.
+
 . What is a language (in terms of sets and sequences)?
 +
 Languages are sets of strings.
