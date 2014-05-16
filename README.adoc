@@ -4,7 +4,47 @@
 
 === Derivatives
 
+http://matt.might.net/articles/parsing-with-derivatives/[A discussion of derivatives and parsing with them].
+
 === Grammars
+
+Grammars consist of:
+
+. a finite set of derivation rules (productions)
+. a finite set of nonterminals (variables)
+. a finite set of terminals (literals)
+. a starting nonterminal
+
+Chomsky recognized that the restrictions placed on the form of derivation rules implies what category of language the grammar can recognize or generate.
+
+NOTE: We will focus primarily on two subsets of context-free grammars, LL and LR grammars, since they have efficient parsing algorithms.
+
+[cols="3", options="header"]
+|===
+
+|Chomsky hierarchy
+|Description
+|Equivalent automaton
+
+|*Unrestricted*
+|Arbitrary sequences of terminals and non-terminals can derive arbitrary sequences of terminals and nonterminals.
+|Turing machine (finite state machine with an infinite tape having a read/write head)
+
+|*Context-sensitive*
+|A nonterminal flanked on either side by terminals and nonterminals (the context) derives a nonempty string of terminals or nonterminals surrounded by the same context.
+|Turing machine with finite tape (finite state machine with a finite tape having a read/write head)
+
+|*Context-free*
+|Nonterminals derive sequences of terminals and nonterminals.
+|Pushdown automaton (finite state machine with a stack)
+
+|*Regular*
+|A nonterminal can derive a terminal followed by a nonterminal or nothing at all.
+|Finite state machine
+
+|===
+
+*Challenge*: Derive the parse tree for +int a = 5;+ using the C grammar.
 
 == May 14
 
