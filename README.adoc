@@ -44,7 +44,7 @@ NOTE: We will focus primarily on two subsets of context-free grammars, LL and LR
 
 |===
 
-*Challenge*: Derive the parse tree for +int a = 5;+ using the C grammar.
+*Challenge*: Derive the parse tree for +int a = 5;+ using the C grammar. 'Hint:' it's a declaration.
 
 == May 14
 
