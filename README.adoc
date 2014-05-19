@@ -9,17 +9,23 @@ Answer in a file called +warmup.txt+
 . What does it mean for two sets to be disjoint?
 . What is the union of two sets?
 
-=== First sets, predict sets, follow sets
-
-Discuss and show.
+=== First and follow sets
 
 First set:: the set of terminals that can appear first in any derivation of a nonterminal.
 Follow set:: the set of terminals that can appear first *after* derivation of a nonterminal.
-Predict set:: if the nonterminal derives the empty string, the first set union follow set, otherwise, first set.
+
+See the scribbles.
 
 === LL(k) grammars
 
-A context-free grammar in which the predict sets for each nonterminal are disjoint.
+LL(k) means parse from *Left* to right, *Leftmost* derivation, with at most *k* tokens of lookahead.
+
+LL(k) grammars are a subset of the context-free grammars. For a grammar to be LL(k):
+
+. The first and follow sets for each nonterminal must be disjoint
+. No left-recursion is allowed
+
+LL(k) grammars are interesting because they can be parsed using 'recursive descent'.
 
 === Recursive descent parsing
 
