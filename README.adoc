@@ -1,5 +1,30 @@
 = COMP603 (Compiler Design)
 
+== May 19
+
+=== Warm up
+
+Answer in a file called +warmup.txt+
+
+. What does it mean for two sets to be disjoint?
+. What is the union of two sets?
+
+=== First sets, predict sets, follow sets
+
+Discuss and show.
+
+First set:: the set of terminals that can appear first in any derivation of a nonterminal.
+Follow set:: the set of terminals that can appear first *after* derivation of a nonterminal.
+Predict set:: if the nonterminal derives the empty string, the first set union follow set, otherwise, first set.
+
+=== LL(k) grammars
+
+A context-free grammar in which the predict sets for each nonterminal are disjoint.
+
+=== Recursive descent parsing
+
+Show
+
 == May 16
 
 === Derivatives
