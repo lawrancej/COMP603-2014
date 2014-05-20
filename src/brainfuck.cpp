@@ -2,7 +2,7 @@
 Brainfuck.
 
 Lab 2. Write a recursive descent parser for Brainfuck.
-Lab 3. Write an interpreter for Brainfuck using Visitor.
+Lab 3. Write an interpreter and compiler for Brainfuck using Visitors.
 
 References:
 
@@ -12,7 +12,7 @@ References:
 If you have gcc:
 
 ----
-gcc -o brainfuck.exe brainfuck.cpp
+g++ -o brainfuck.exe brainfuck.cpp
 brainfuck.exe helloworld.bf
 ----
 */
@@ -45,29 +45,42 @@ class Visitor {
         virtual void visit(const Program * program) = 0;
 };
 
-class Node {};
+class Node {
+    public:
+        virtual void accept (Visitor *v) = 0;
+};
 
-class CommandNode : Node {
+class CommandNode : public Node {
     public:
         Command command;
-        void accept (Visitor & v) {
-            v.visit(this);
+        CommandNode(char c) {
+            switch(c) {
+                case '+': command = INCREMENT; break;
+                case '-': command = DECREMENT; break;
+                case '<': command = SHIFT_LEFT; break;
+                case '>': command = SHIFT_RIGHT; break;
+                case ',': command = INPUT; break;
+                case '.': command = OUTPUT; break;
+            }
+        }
+        void accept (Visitor * v) {
+            v->visit(this);
         }
 };
 
-class Loop : Node {
+class Loop : public Node {
     public:
         vector<Node*> children;
-        void accept (Visitor & v) {
-            v.visit(this);
+        void accept (Visitor * v) {
+            v->visit(this);
         }
 };
 
-class Program : Node {
+class Program : public Node {
     public:
         vector<Node*> children;
-        void accept (Visitor & v) {
-            v.visit(this);
+        void accept (Visitor * v) {
+            v->visit(this);
         }
 };
 
@@ -85,19 +98,47 @@ void parse(fstream & file, Program * program) {
     file >> c;
     // How to print out that character
     cout << c;
-    // How to insert a node into the program. NOTE: you want to push only Loop or CommandNode, not Node
-    program->children.push_back(new Node());
+    // How to insert a node into the program.
+    program->children.push_back(new CommandNode(c));
 }
+
+class Printer : public Visitor {
+    public:
+        void visit(const CommandNode * leaf) {
+            switch (leaf->command) {
+                case INCREMENT:   cout << '+'; break;
+                case DECREMENT:   cout << '-'; break;
+                case SHIFT_LEFT:  cout << '<'; break;
+                case SHIFT_RIGHT: cout << '>'; break;
+                case INPUT:       cout << ','; break;
+                case OUTPUT:      cout << '.'; break;
+            }
+        }
+        void visit(const Loop * loop) {
+            cout << '[';
+            for (vector<Node*>::const_iterator it = loop->children.begin(); it != loop->children.end(); ++it) {
+                (*it)->accept(this);
+            }
+            cout << ']';
+        }
+        void visit(const Program * program) {
+            for (vector<Node*>::const_iterator it = program->children.begin(); it != program->children.end(); ++it) {
+                (*it)->accept(this);
+            }
+        }
+};
 
 int main(int argc, char *argv[]) {
     fstream file;
     Program program;
+    Printer printer;
     if (argc == 1) {
         cout << argv[0] << ": No input files." << endl;
     } else if (argc > 1) {
         for (int i = 1; i < argc; i++) {
             file.open(argv[i], fstream::in);
             parse(file, & program);
+            program.accept(&printer);
             file.close();
         }
     }
