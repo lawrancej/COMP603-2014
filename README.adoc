@@ -16,6 +16,8 @@ Do you have Visual Studio or http://sourceforge.net/projects/mingw/files/latest/
 Write a recursive descent parser for http://en.wikipedia.org/wiki/Brainfuck[Brainfuck].
 
 See +src/brainfuck.cpp+ for a starting point.
+It makes use of the http://en.wikipedia.org/wiki/Visitor_pattern[Visitor design pattern].
+If your C++ is rusty, check out the http://www.cplusplus.com/reference/[C++ Reference].
 
 == May 19
 
