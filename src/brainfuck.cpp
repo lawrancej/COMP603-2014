@@ -21,7 +21,7 @@ Loop -> '[' Sequence ']'
 For each nonterminal, write a function with the name of the nonterminal.
 Peek at the next character and figure out which production (rule) to apply based on the first and/or follow sets.
 
-If the parser's working right, you should see the program spit back the source at you.
+If the parser's working right, you should see the program spit back the source at you (including the loop brackets).
 
 == Lab 3
 
