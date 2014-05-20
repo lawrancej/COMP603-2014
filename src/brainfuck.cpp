@@ -1,14 +1,38 @@
 /*
-Brainfuck.
+= Brainfuck
 
-Lab 2. Write a recursive descent parser for Brainfuck.
-Lab 3. Write an interpreter and compiler for Brainfuck using Visitors.
+== Lab 2
 
-References:
+Write a recursive descent parser for Brainfuck corresponding to the LL(1) grammar for the language:
+
+----
+Program -> Sequence
+
+Sequence -> Command Sequence
+Sequence -> Loop Sequence
+Sequence -> "" (empty string)
+
+Command -> '+' | '-' | '<' | '>' | ',' | '.'
+
+Loop -> '[' Sequence ']'
+----
+
+If the parser's working right, you should see the program spit back the source at you.
+
+== Lab 3
+
+Write an interpreter and compiler for Brainfuck using Visitors.
+
+1. Compile Brainfuck to a language of your choice. Copypasta the Printer visitor class into, say, CCompiler or JavaCompiler. It should just print out equivalent C or Java or whatever source code.
+2. Interpret the AST by writing a Interpreter visitor that just executes commands based on the tree structure.
+
+== References
 
 * http://en.wikipedia.org/wiki/Brainfuck
 * http://www.cplusplus.com/reference/
 * http://en.wikipedia.org/wiki/Visitor_pattern
+
+== Running
 
 If you have gcc:
 
@@ -155,9 +179,6 @@ class Printer : public Visitor {
         }
 };
 
-// For Lab 2: if the parser's working right, you should see the program spit back the source at you.
-// For Lab 3: compile to a language of your choice by copypasta the Printer visitor into, say, CCompiler or JavaCompiler. That'll just print out equivalent C or Java or whatever source code.
-// Also for Lab 3: interpret the AST by writing a Interpreter visitor that just executes commands based on the tree structure.
 int main(int argc, char *argv[]) {
     fstream file;
     Program program;
