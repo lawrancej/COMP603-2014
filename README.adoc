@@ -1,5 +1,13 @@
 = COMP603 (Compiler Design)
 
+== May 20
+
+=== Lab 2
+
+Do you have Visual Studio or http://sourceforge.net/projects/mingw/files/latest/download?source=files[GCC] installed?
+
+Write a recursive descent parser for Brainfuck.
+
 == May 19
 
 === Warm up
