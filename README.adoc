@@ -17,7 +17,7 @@ Write a recursive descent parser for http://en.wikipedia.org/wiki/Brainfuck[Brai
 
 See +src/brainfuck.cpp+ for a starting point.
 It makes use of the http://en.wikipedia.org/wiki/Visitor_pattern[Visitor design pattern].
-If your C++ is rusty, check out the http://www.cplusplus.com/reference/[C++ Reference].
+If your C\++ is rusty, check out the http://www.cplusplus.com/reference/[C++ Reference].
 To see an example of how to do recursive descent parsing, check out +src/RecursiveDescent.java+.
 
 == May 19
