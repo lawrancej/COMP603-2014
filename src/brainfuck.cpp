@@ -10,12 +10,16 @@ Program -> Sequence
 
 Sequence -> Command Sequence
 Sequence -> Loop Sequence
+Sequence -> any other character, ignore (treat as a comment)
 Sequence -> "" (empty string)
 
 Command -> '+' | '-' | '<' | '>' | ',' | '.'
 
 Loop -> '[' Sequence ']'
 ----
+
+For each nonterminal, write a function with the name of the nonterminal.
+For each production (rule), peek at the next character and figure out what to do based on the first set.
 
 If the parser's working right, you should see the program spit back the source at you.
 
@@ -77,7 +81,7 @@ class Visitor {
 };
 
 /**
- * The Node class accepts visitors, but since it's pure virtual, we can't use it directly.
+ * The Node class (like a Java abstract class) accepts visitors, but since it's pure virtual, we can't use it directly.
  */
 class Node {
     public:
