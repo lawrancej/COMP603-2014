@@ -19,7 +19,7 @@ Loop -> '[' Sequence ']'
 ----
 
 For each nonterminal, write a function with the name of the nonterminal.
-For each production (rule), peek at the next character and figure out what to do based on the first set.
+For each nonterminal, peek at the next character and figure out which production (rule) to apply based on the first set.
 
 If the parser's working right, you should see the program spit back the source at you.
 
