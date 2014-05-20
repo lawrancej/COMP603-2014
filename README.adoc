@@ -8,6 +8,8 @@ Do you have Visual Studio or http://sourceforge.net/projects/mingw/files/latest/
 
 Write a recursive descent parser for Brainfuck.
 
+See +src/brainfuck.cpp+ for a starting point.
+
 == May 19
 
 === Warm up
