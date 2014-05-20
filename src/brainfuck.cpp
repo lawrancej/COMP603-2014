@@ -8,6 +8,7 @@ References:
 
 * http://en.wikipedia.org/wiki/Brainfuck
 * http://www.cplusplus.com/reference/
+* http://en.wikipedia.org/wiki/Visitor_pattern
 
 If you have gcc:
 
