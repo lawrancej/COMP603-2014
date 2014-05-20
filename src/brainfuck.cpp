@@ -23,7 +23,9 @@ brainfuck.exe helloworld.bf
 
 using namespace std;
 
-/* Commands */
+/**
+ * Primitive Brainfuck commands
+ */
 typedef enum { 
     INCREMENT, // +
     DECREMENT, // -
@@ -38,6 +40,10 @@ class CommandNode;
 class Loop;
 class Program;
 
+/**
+ * Visits?!? Well, that'd indicate visitors!
+ * A visitor is an interface that allows you to walk through a tree and do stuff.
+ */
 class Visitor {
     public:
         virtual void visit(const CommandNode * leaf) = 0;
@@ -45,11 +51,18 @@ class Visitor {
         virtual void visit(const Program * program) = 0;
 };
 
+/**
+ * The Node class accepts visitors, but since it's pure virtual, we can't use it directly.
+ */
 class Node {
     public:
         virtual void accept (Visitor *v) = 0;
 };
 
+/**
+ * CommandNode publicly extends Node to accept visitors.
+ * CommandNode represents a leaf node with a primitive Brainfuck command in it.
+ */
 class CommandNode : public Node {
     public:
         Command command;
@@ -68,6 +81,10 @@ class CommandNode : public Node {
         }
 };
 
+/**
+ * Loop publicly extends Node to accept visitors.
+ * Loop represents a loop in Brainfuck.
+ */
 class Loop : public Node {
     public:
         vector<Node*> children;
@@ -76,6 +93,10 @@ class Loop : public Node {
         }
 };
 
+/**
+ * Program is the root of a Brainfuck program abstract syntax tree.
+ * Because Brainfuck is so primitive, the parse tree is the abstract syntax tree.
+ */
 class Program : public Node {
     public:
         vector<Node*> children;
@@ -86,7 +107,7 @@ class Program : public Node {
 
 /**
  * Read in the file by recursive descent.
- * Modify program as necessary
+ * Modify as necessary and add whatever functions you need to get things done.
  */
 void parse(fstream & file, Program * program) {
     char c;
@@ -102,6 +123,11 @@ void parse(fstream & file, Program * program) {
     program->children.push_back(new CommandNode(c));
 }
 
+/**
+ * A printer for Brainfuck abstract syntax trees.
+ * As a visitor, it will just print out the commands as is.
+ * For Loops and the root Program node, it walks trough all the children.
+ */
 class Printer : public Visitor {
     public:
         void visit(const CommandNode * leaf) {
@@ -128,6 +154,9 @@ class Printer : public Visitor {
         }
 };
 
+// For Lab 2: if the parser's working right, you should see the program spit back the source at you.
+// For Lab 3: compile to a language of your choice by copypasta the Printer visitor into, say, CCompiler or JavaCompiler. That'll just print out equivalent C or Java or whatever source code.
+// Also for Lab 3: interpret the AST by writing a Interpreter visitor that just executes commands based on the tree structure.
 int main(int argc, char *argv[]) {
     fstream file;
     Program program;
