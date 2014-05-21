@@ -1,5 +1,24 @@
 = COMP603 (Compiler Design)
 
+== May 21
+
+=== LR(k) grammars
+
+LR(k) means *Left* to right, *Rightmost* derivation, with *k* tokens of lookahead.
+
+LR(k) grammars are a subset of the context-free grammars, and a proper superset of the LL(k) grammars (the LL(k) grammars are a proper subset of the LR(k) grammars).
+For a grammar to be LR(k):
+
+* It must be unambiguous
+
+LR(k) grammars can be parsed using 'shift-reduce'.
+
+=== Shift-reduce parsing
+
+Shift-reduce parsing is also known as bottom up parsing, because the parser works from the terminals up to the starting nonterminal.
+A https://www.youtube.com/watch?v=uncfFsbUF68[shift-reduce parser] shifts terminals onto a stack, and reduces the stack to a nonterminal when the stack matches the right hand side of a production (rule).
+Programmers rarely write shift-reduce parsers by hand, and use http://en.wikipedia.org/wiki/Parser_generator[parser generators] instead.
+
 == May 20
 
 === Lab 2
@@ -34,7 +53,7 @@ Answer in a file called +warmup.txt+
 First set:: the set of terminals that can appear first in any derivation of a nonterminal.
 Follow set:: the set of terminals that can appear first *after* derivation of a nonterminal.
 
-See the scribbles.
+See the scribbles (from page 148 of the textbook).
 
 === LL(k) grammars
 
@@ -42,14 +61,18 @@ LL(k) means parse from *Left* to right, *Leftmost* derivation, with at most *k* 
 
 LL(k) grammars are a subset of the context-free grammars. For a grammar to be LL(k):
 
-. The first and follow sets for each nonterminal must be disjoint
-. No left-recursion is allowed
+* The first and follow sets for each nonterminal must be disjoint
+* It must be unambiguous
+* No left-recursion is allowed
+* No common prefixes on the right hand side are allowed
 
-LL(k) grammars are interesting because they can be parsed using 'recursive descent'.
+LL(k) grammars can be parsed using 'recursive descent'.
 
 === Recursive descent parsing
 
-Show
+Recursive descent parsing is also known as top-down parsing, because the parse starts from the starting nonterminal.
+Each nonterminal is a function, and the first and follow sets determine which production (rule) to choose.
+See +src/RecursiveDescent.java+ for an example recursive descent parser.
 
 == May 16
 
