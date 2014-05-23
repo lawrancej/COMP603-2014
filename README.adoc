@@ -63,6 +63,13 @@ It makes use of the http://en.wikipedia.org/wiki/Visitor_pattern[Visitor design 
 If your C\++ is rusty, check out the http://www.cplusplus.com/reference/[C++ Reference].
 To see an example of how to do recursive descent parsing, check out +src/RecursiveDescent.java+.
 
+=== Hints
+You can't avoid some form of recursion or use of a Node stack. Your options:
+
+. Use mutually recursive functions that stuff child nodes into programs or loops
+. Maintain an explicit stack of nodes inside the existing parse function
+. Use an implicit stack by modifying +Node+ to include a pointer to a +parent+ Node
+
 == May 19
 
 === Warm up
