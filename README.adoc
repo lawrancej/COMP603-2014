@@ -4,7 +4,8 @@
 
 === Optimizations
 
-http://en.wikipedia.org/wiki/Optimizing_compiler[Compilers are really good at optimizations, because there's so many to choose from].
+* http://en.wikipedia.org/wiki/Optimizing_compiler[Compilers are really good at optimizations, because there's so many to choose from.]
+* http://blog.codinghorror.com/the-infinite-space-between-words/[CPU is way faster than anything else, and how!]
 
 === Project ideas
 
