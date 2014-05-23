@@ -20,13 +20,13 @@ You're welcome to pursue these traditional project ideas:
 
 These ideas are also welcome:
 
-* A parser combinator library to target multiple parsing backends (derivative, shift-reduce, or recursive descent parsing).
+* A parser combinator library to target multiple parsing strategies (derivative, shift-reduce, or recursive descent parsing).
 
-These projects build upon tools like clang, JDT, Python's ast module to do work:
+These projects build upon tools like http://clang.llvm.org/docs/Tooling.html[clang] (for C/C++), http://www.vogella.com/tutorials/EclipseJDT/article.html[JDT] (for Java), https://docs.python.org/2/library/ast.html[Python's ast module] to do work:
 
 * Automated refactoring tool for existing languages to serve education and large projects
 * Search engine for identifiers and literals in code that makes good recommendations, (e.g., http://en.wikipedia.org/wiki/Pagerank[PageRank])
-* Something like http://en.wikipedia.org/wiki/QuickCheck[Quickcheck], or something that can generate characterization tests automatically.
+* Something like http://en.wikipedia.org/wiki/QuickCheck[Quickcheck], but can http://en.wikipedia.org/wiki/Characterization_test[generate characterization tests automatically] and efficiently.
 
 == May 21
 
