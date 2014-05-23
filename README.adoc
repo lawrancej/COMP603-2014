@@ -13,16 +13,20 @@ For our project, we'll begin after we're done with our common labs (there aren't
 You're welcome to work with as few or as many people as you wish either in this section or others.
 Start thinking about which of these you'd like to do, or suggest new ideas.
 
-These are traditional project ideas that you're welcome to pursue:
+You're welcome to pursue these traditional project ideas:
 
 * Implement some simple language, like say, http://en.wikipedia.org/wiki/Cool_(programming_language)[Cool].
 * Something compiler-related that dovetails nicely with Senior project.
 
-These projects build upon tools like clang, JDT, Python's ast module to do work.
+These ideas are also welcome:
+
+* A parser combinator library to target multiple parsing backends (derivative, shift-reduce, or recursive descent parsing).
+
+These projects build upon tools like clang, JDT, Python's ast module to do work:
 
 * Automated refactoring tool for existing languages to serve education and large projects
-* Search engine for identifiers and literals in code that makes good recommendations, (e.g., PageRank)
-* Something like Quickcheck, or something that can generate characterization tests automatically.
+* Search engine for identifiers and literals in code that makes good recommendations, (e.g., http://en.wikipedia.org/wiki/Pagerank[PageRank])
+* Something like http://en.wikipedia.org/wiki/QuickCheck[Quickcheck], or something that can generate characterization tests automatically.
 
 == May 21
 
