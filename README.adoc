@@ -15,7 +15,7 @@ Start thinking about which of these you'd like to do, or suggest new ideas.
 
 You're welcome to pursue these traditional project ideas:
 
-* Implement some simple language, like say, http://en.wikipedia.org/wiki/Cool_(programming_language)[Cool].
+* Implement some moderately simple language, like say, http://en.wikipedia.org/wiki/Cool_(programming_language)[Cool] or http://www.buildyourownlisp.com/[LISP].
 * Something compiler-related that dovetails nicely with Senior project.
 
 These ideas are also welcome:
