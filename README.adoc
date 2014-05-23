@@ -1,5 +1,9 @@
 = COMP603 (Compiler Design)
 
+== May 23
+
+http://en.wikipedia.org/wiki/Optimizing_compiler[Compilers are really good at optimizations, because there's so many to choose from].
+
 == May 21
 
 === LR(k) grammars
