@@ -1,17 +1,19 @@
 = COMP603 (Compiler Design)
 
+== May 30
+
 == May 28
 
 === Parsing techniques
 
 Traditional approaches to parsing:
 
-* Hand-written parsers (tedious, error-prone)
-* Parser generator (tedious, steep learning curve)
+* http://en.wikipedia.org/wiki/Recursive_descent_parsing[Hand-written parsers] (tedious, error-prone)
+* http://en.wikipedia.org/wiki/Parser_generator[Parser generator] (tedious, steep learning curve)
 
 === Parser combinators
 
-Explain parser combinators through code.
+Explain http://en.wikipedia.org/wiki/Parser_combinators[parser combinators] through code.
 
 == May 27
 
