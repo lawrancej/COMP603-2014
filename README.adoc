@@ -3,11 +3,13 @@
 == June 3
 
 === Lab 4
-Optimize your compiler and interpreter developed in Lab 3. (Think Run-length encoding your brainfuck code).
+Optimize your compiler and interpreter developed in Lab 3.
 
 . Modify +CommandNode+ so that it includes a counter (presumably an +int+ or the like).
-. Modify the parser a bit so that it only emits a command node after it has encountered a full run of the same command. (e.g., +-----+ becomes CommandNode('-', 5))
+. Modify the parser a bit so that it only emits a command node after it has encountered a full run of the same command. (e.g., +-----+ becomes +CommandNode(\'-', 5)+)
 . Modify the interpreter and compiler accordingly.
+
+In short: do an optimization that performs http://en.wikipedia.org/wiki/Run-length_encoding[run-length encoding] on Brainfuck code.
 
 == June 2
 
