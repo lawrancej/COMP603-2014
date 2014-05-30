@@ -14,10 +14,13 @@ Optimize your compiler and interpreter developed in Lab 3. (Think Run-length enc
 == May 30
 
 === Symbol tables
-Chat about this
+A map from an identifier within a scope to information about it (its type, where it's defined).
+
+* In an interpreter, these can be used for data storage.
+* In a compiler, these are used to generate code.
 
 === Type checking
-Chat about this
+Traverse an AST and verifying that it is put together correctly, and generate errors if not.
 
 == May 28
 
