@@ -12,11 +12,12 @@ Optimize your compiler and interpreter developed in Lab 3.
 In short: do an optimization that performs http://en.wikipedia.org/wiki/Run-length_encoding[run-length encoding] on Brainfuck code.
 
 == June 2
+Work on Labs 2-4.
 
 == May 30
 
 === Symbol tables
-A map from an identifier within a scope to information about it (its type, where it's defined).
+A map among identifiers, scopes and other information (e.g., its type, where it's defined).
 
 * In an interpreter, these can be used for data storage.
 * In a compiler, these are used to generate code.
