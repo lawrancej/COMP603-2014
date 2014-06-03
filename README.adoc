@@ -1,5 +1,9 @@
 = COMP603 (Compiler Design)
 
+== June 17
+
+=== Midterm
+
 == June 3
 
 === Lab 4
@@ -10,6 +14,9 @@ Optimize your compiler and interpreter developed in Lab 3.
 . Modify the interpreter and compiler accordingly.
 
 In short: do an optimization that performs http://en.wikipedia.org/wiki/Run-length_encoding[run-length encoding] on Brainfuck code.
+
+=== Hint
+You can tell the optimizer is working if the code your compiler generates includes numeric literals.
 
 == June 2
 Work on Labs 2-4.
@@ -44,7 +51,12 @@ Explain http://en.wikipedia.org/wiki/Parser_combinators[parser combinators] thro
 This is a two-parter, building upon Lab 2.
 
 . Compile Brainfuck to a language of your choice. Copypasta the Printer visitor class into, say, CCompiler or JavaCompiler. It should just print out equivalent C or Java or whatever source code.
-. Interpret the AST by writing a Interpreter visitor that just executes commands based on the tree structure.
+. Interpret the abstract syntax tree (AST) by writing a Interpreter visitor that just executes commands based on the tree structure.
+
+=== Hints
+You can tell if your compiler is working if you can take the source code it generated and pass that on to the compiler for the language you're targeting.
+
+You can tell if your interpreter is working if the program prints +Hello, world+ given +src/helloworld.bf+.
 
 == May 23
 
@@ -114,7 +126,10 @@ If your C\++ is rusty, check out the http://www.cplusplus.com/reference/[C++ Ref
 To see an example of how to do recursive descent parsing, check out +src/RecursiveDescent.java+.
 
 === Hints
-You can't avoid some form of recursion or use of a Node stack. Your options:
+The +Printer+ traverses the tree the parser built and prints out the equivalent Brainfuck code.
+Therefore, you can tell if your program is working if the Printer produces the *exact* same program as what your parser read in.
+
+To parse, you can't avoid using some form of recursion or a Node stack. Your options:
 
 . Use mutually recursive functions that stuff child nodes into programs or loops
 . Maintain an explicit stack of nodes inside the existing parse function
