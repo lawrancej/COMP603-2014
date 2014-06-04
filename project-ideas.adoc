@@ -20,6 +20,7 @@ Implement a compiler (again!) with the help of readily-available, extensive docu
 Build something useful upon tools like http://clang.llvm.org/docs/Tooling.html[clang] (for C/C++), http://www.vogella.com/tutorials/EclipseJDT/article.html[JDT] (for Java), https://docs.python.org/2/library/ast.html[Python's ast module].
 
 * Automated refactoring tool for existing languages to serve education and large projects
+* Source to source translation (say from C\++ to Java, Python2 to Python3, etc.)
 * Search engine for identifiers and literals in code that makes good recommendations, (e.g., http://en.wikipedia.org/wiki/Pagerank[PageRank])
 * Something like http://en.wikipedia.org/wiki/QuickCheck[Quickcheck], but can http://en.wikipedia.org/wiki/Characterization_test[generate characterization tests automatically] and efficiently
 
