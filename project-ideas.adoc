@@ -1,0 +1,33 @@
+= Final Project
+
+Our projects will begin after we're done with our common labs.
+You may work with as few or as many people as you wish either in this section or others.
+
+== Ideas
+
+Feel free to choose among the ideas below or suggest an idea of your own.
+
+=== Compiler implementation
+
+Implement a compiler (again!) with the help of readily-available, extensive documentation.
+
+* Implement http://en.wikipedia.org/wiki/Cool_(programming_language)[Cool]
+* Implement a subset of http://www.buildyourownlisp.com/[LISP]
+* http://compilers.iecc.com/crenshaw/[Let's build a compiler]
+
+=== Language tooling
+
+Build something useful upon tools like http://clang.llvm.org/docs/Tooling.html[clang] (for C/C++), http://www.vogella.com/tutorials/EclipseJDT/article.html[JDT] (for Java), https://docs.python.org/2/library/ast.html[Python's ast module].
+
+* Automated refactoring tool for existing languages to serve education and large projects
+* Search engine for identifiers and literals in code that makes good recommendations, (e.g., http://en.wikipedia.org/wiki/Pagerank[PageRank])
+* Something like http://en.wikipedia.org/wiki/QuickCheck[Quickcheck], but can http://en.wikipedia.org/wiki/Characterization_test[generate characterization tests automatically] and efficiently
+
+=== Miscellaneous
+
+Suggest your own or try one of these ideas.
+
+* Find and implement something compiler-related that dovetails nicely with Senior project, such as offering a command interpreter interface for your project.
+* Write your own parser combinator library like http://jparsec.codehaus.org/[JParsec], http://boost-spirit.com/home/[Boost.Sprit] or http://pyparsing.wikispaces.com/[PyParsing] to target multiple parsing strategies (derivative, shift-reduce, or recursive descent parsing) or contribute to these libraries.
+* Modify https://github.com/lawrancej/logisim[Logisim] to support http://www.verilog.com/VerilogBNF.html[Verilog] input, perhaps using http://jparsec.codehaus.org/[JParsec].
+

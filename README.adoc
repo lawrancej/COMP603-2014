@@ -4,6 +4,10 @@
 
 === Midterm
 
+== June 4
+
+Project stuff.
+
 == June 3
 
 === Lab 4
@@ -57,6 +61,7 @@ This is a two-parter, building upon Lab 2.
 You can tell if your compiler is working if you can take the source code it generated and pass that on to the compiler for the language you're targeting.
 
 You can tell if your interpreter is working if the program prints +Hello, world+ given +src/helloworld.bf+.
+Don't forget to zero out the array! (In C, use +memset+)
 
 == May 23
 
