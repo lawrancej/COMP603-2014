@@ -6,7 +6,7 @@
 
 == June 4
 
-Project stuff.
+https://github.com/lawrancej/COMP603-2014/blob/master/project-ideas.adoc[Project ideas].
 
 * https://github.com/lawrancej/jdt-project[Build upon Eclipse JDT (for working with Java code)]
 * https://github.com/lawrancej/jparsec-project[Build upon JParsec (for implementing a language)]
