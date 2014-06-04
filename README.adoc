@@ -1,5 +1,8 @@
 = COMP603 (Compiler Design)
 
+== June 20/27
+Lunch?
+
 == June 17
 
 === Midterm
