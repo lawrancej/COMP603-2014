@@ -7,6 +7,9 @@ Lunch?
 
 === Midterm
 
+== June 6
+https://docs.google.com/forms/d/1IZkGOpzXnGwgCfwLaa6XnjYV3WWI15JwmailSKcnWtA/viewform[Project kickoff].
+
 == June 4
 
 https://github.com/lawrancej/COMP603-2014/blob/master/project-ideas.adoc[Project ideas].
