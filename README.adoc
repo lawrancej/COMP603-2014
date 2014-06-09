@@ -1,11 +1,19 @@
 = COMP603 (Compiler Design)
 
-== June 20/27
+== June 27
 Lunch?
 
 == June 17
 
 === Midterm
+
+== June 9
+
+=== Old midterm
+*Challenge* Here's an https://github.com/lawrancej/COMP603-2014/tree/master/exams[old midterm for practice purposes]. How much can you answer without https://www.google.com[your peripheral brain]?
+
+=== Form teams
+And meet with them.
 
 == June 6
 https://docs.google.com/forms/d/1IZkGOpzXnGwgCfwLaa6XnjYV3WWI15JwmailSKcnWtA/viewform[Project kickoff].
