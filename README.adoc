@@ -12,8 +12,12 @@ Lunch?
 === Old midterm
 *Challenge* Here's an https://github.com/lawrancej/COMP603-2014/tree/master/exams[old midterm for practice purposes]. How much can you answer without https://www.google.com[your peripheral brain]?
 
+NOTE: The real midterm will consist of *extremely short* answers (not sentences), but the content will be similar.
+
 === Form teams
-And meet with them.
+And meet with them. 
+
+TIP: Shoot me an email if you'd like me to send you a list of students interested in the same projects as you.
 
 == June 6
 https://docs.google.com/forms/d/1IZkGOpzXnGwgCfwLaa6XnjYV3WWI15JwmailSKcnWtA/viewform[Project kickoff].
