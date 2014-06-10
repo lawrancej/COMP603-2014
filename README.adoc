@@ -7,6 +7,16 @@ Lunch?
 
 === Midterm
 
+== June 10
+
+=== Review practice midterm answer key
+
+https://github.com/lawrancej/COMP603-2014/blob/master/exams/Midterm1key.pdf[See answer key here]
+
+=== Set up project repositories
+
+Walk through this.
+
 == June 9
 
 === Old midterm
