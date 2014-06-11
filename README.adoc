@@ -7,6 +7,23 @@ Lunch?
 
 === Midterm
 
+== June 11
+
+=== Warm up: Redo the prequiz
+Scroll down to May 9.
+
+If you haven't already added prequiz.txt to your repo, please do so now.
+
+----
+git add prequiz.txt
+git commit -am "Added prequiz"
+----
+
+*Revise your answers* Was it easier this time?
+
+=== More midterm practice questions
+
+
 == June 10
 
 === Review practice midterm answer key
