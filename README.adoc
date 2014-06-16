@@ -8,9 +8,9 @@ Lunch?
 === Midterm
 
 == June 16
-image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/june-16.png[See this image].
 
-See the state machine at the top.
+=== Midterm review: regular languages
+image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-fa.png[Refer to this finite automaton for these questions].
 
 . What does it appear that this state machine is matching?
 . What regular expression matches the langauge this state machine accepts?
@@ -18,9 +18,13 @@ See the state machine at the top.
 . What is the derivative of your original regex, with respect to the letter <?
 . Is this state machine deterministic or nondeterministic? Why?
 
-See the circles in the middle. Assume these are levels of the Chomsky hierarchy. Fill them in.
+=== Midterm review: Chomsky's hierarchy
+image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-chomsky.png[Assume these are levels of the Chomsky hierarchy. Fill them in].
 
-See the grammar at the bottom.
+Choose among: context-free, context-sensitive, LL(k), LR(k), Recursively-enumerable, Regular.
+
+=== Midterm review: Grammars and parsing
+image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-grammar.png[Refer to this grammar for these questions].
 
 . Give an example string that this grammar recognizes.
 . Is this language LL(k)? Why or why not?
