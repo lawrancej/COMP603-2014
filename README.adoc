@@ -8,7 +8,7 @@ Lunch?
 === Midterm
 
 == June 16
-https://github.com/lawrancej/COMP603-2014/blob/master/scribbles/june-16.png[See this image].
+https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/june-16.png[See this image].
 
 See the state machine at the top.
 
