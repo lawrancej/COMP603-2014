@@ -7,6 +7,36 @@ Lunch?
 
 === Midterm
 
+== June 16
+https://github.com/lawrancej/COMP603-2014/blob/master/scribbles/june-16.png[See this image].
+
+See the state machine at the top.
+
+. What does it appear that this state machine is matching?
+. What regular expression matches the langauge this state machine accepts?
+. What is the derivative of that regex, with respect to the letter m?
+. What is the derivative of your original regex, with respect to the letter <?
+. Is this state machine deterministic or nondeterministic? Why?
+
+See the circles in the middle. Assume these are levels of the Chomsky hierarchy. Fill them in.
+
+See the grammar at the bottom.
+
+. Give an example string that this grammar recognizes.
+. Is this language LL(k)? Why or why not?
+. Is this language LR(k)? Why or why not?
+. Is this language context-free? Why or why not?
+. Is this language regular? Why or why not?
+. Is this language context-sensitive? Why or why not?
+. What is First(Block)?
+. What is Follow(Expr)?
+. Show the shift-reduce steps for the the following string:
+
+----
+begin x = 5; y = x end
+----
+
+
 == June 11
 
 === Warm up: Redo the prequiz
