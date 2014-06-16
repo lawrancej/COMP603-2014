@@ -14,8 +14,8 @@ image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/
 
 . What does it appear that this state machine is matching?
 . What regular expression matches the langauge this state machine accepts?
-. What is the derivative of that regex, with respect to the letter m?
-. What is the derivative of your original regex, with respect to the letter <?
+. What is the derivative of that regex, with respect to the letter +m+?
+. What is the derivative of your original regex, with respect to the letter +<+?
 . Is this state machine deterministic or nondeterministic? Why?
 
 === Midterm review: Chomsky's hierarchy
@@ -36,7 +36,7 @@ image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/
 . What is First(Block)?
 . What is Follow(Expr)?
 . Show the shift-reduce steps for the the following string:
-
++
 ----
 begin x = 5; y = x end
 ----
