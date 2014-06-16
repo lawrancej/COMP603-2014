@@ -13,10 +13,20 @@ Lunch?
 image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-fa.png[Refer to this finite automaton for these questions].
 
 . What does it appear that this state machine is matching?
++
+HTML start tags (well, that's what I was going for anyway in the 10 minutes it took to draw this)
 . What regular expression matches the langauge this state machine accepts?
++
+Hmm
 . What is the derivative of that regex, with respect to the letter +m+?
++
+The empty set, because the automaton does not match m at the start.
 . What is the derivative of your original regex, with respect to the letter +<+?
++
+Hmm
 . Is this state machine deterministic or nondeterministic? Why?
++
+It's deterministic, because there's no epsilon transitions or choices about where to go next.
 
 === Midterm review: Chomsky's hierarchy
 image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-chomsky.png[Assume these are levels of the Chomsky hierarchy. Fill them in].
@@ -24,22 +34,72 @@ image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/
 . Choose among: context-free, context-sensitive, LL(k), LR(k), Recursively-enumerable, Regular.
 . Match the automaton/parsing strategy with the language. Choose among: finite automaton, linear-bounded Turing machine, pushdown automaton, recursive descent, shift-reduce, Turing machine.
 
+From outside to inside:
+. Recursively-enumerable (Turing machine)
+. Context-sensitive (Linear bounded Turing machine)
+. Context-free (Pushdown automaton)
+. LR(k) (Shift-reduce)
+. LL(k) (Recursive descent)
+. Regular (Finite automaton)
+
 === Midterm review: Grammars and parsing
 image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-grammar.png[Refer to this grammar for these questions].
 
 . Give an example string that this grammar recognizes.
++
+See below, derp!
 . Is this language LL(k)? Why or why not?
++
+No, it's not LL(k), because it has left recursion in it (see: StmtList -> StmtList).
 . Is this language LR(k)? Why or why not?
++
+Yes, because there's some shift-reduce question coming up later. It's non-ambiguous.
 . Is this language context-free? Why or why not?
++
+Yes, because the left side of all production rules are nonterminals, and the right side are sequences of terminals or nonterminals.
 . Is this language regular? Why or why not?
++
+No, because it has recursion in it. Grammars for regular languages must consist of a nonterminal deriving a sequence of terminals, optionally followed by only one nonterminal at the end.
 . Is this language context-sensitive? Why or why not?
++
+Yes, because it's context-free, and context-sensitive languages have fewer restrictions on their grammar.
 . What is First(Block)?
++
+begin
 . What is Follow(Expr)?
++
++end+, +;+, +]+, +\++ +)+
 . Show the shift-reduce steps for the the following string:
 +
 ----
 begin x = 5; y = x end
 ----
+
+. shift begin
+. shift x
+. reduce x to Id
+. reduce Id to Var
+. shift =
+. shift 5
+. reduce 5 to T
+. reduce T to Expr
+. reduce Var = Expr to Stmt
+. reduce Stmt to StmtList
+. shift ;
+. shift y
+. reduce y to Id
+. reduce Id to Var
+. shift =
+. shift x
+. reduce x to Id
+. reduce Id to Var
+. reduce Var to T
+. reduce T to Expr
+. reduce Var = Expr to Stmt
+. reduce StmtList; Stmt to StmtList
+. shift end
+. reduce begin StmtList end to Block
+. reduce Block to Prog
 
 
 == June 11
