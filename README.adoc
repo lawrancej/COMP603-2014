@@ -21,7 +21,8 @@ image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/
 === Midterm review: Chomsky's hierarchy
 image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-chomsky.png[Assume these are levels of the Chomsky hierarchy. Fill them in].
 
-Choose among: context-free, context-sensitive, LL(k), LR(k), Recursively-enumerable, Regular.
+. Choose among: context-free, context-sensitive, LL(k), LR(k), Recursively-enumerable, Regular.
+. Match the automaton/parsing strategy with the language. Choose among: finite automaton, linear-bounded Turing machine, pushdown automaton, recursive descent, shift-reduce, Turing machine.
 
 === Midterm review: Grammars and parsing
 image:https://raw.githubusercontent.com/lawrancej/COMP603-2014/master/scribbles/midterm-grammar.png[Refer to this grammar for these questions].
