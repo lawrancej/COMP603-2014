@@ -75,6 +75,8 @@ begin
 begin x = 5; y = x end
 ----
 
+Steps
+
 . shift begin
 . shift x
 . reduce x to Id
