@@ -149,21 +149,22 @@ Refer to this finite automaton to answer questions in this section.
 
 \section{Context-free languages}
 Refer to this grammar to answer questions in this section.
-
-$$Start \to Stmt$$
-$$Stmt \to id \verb+ = + Expr$$
-$$Stmt \to \verb+if + Expr \verb+ then + Stmts \verb+ end+$$
-$$Stmt \to \verb+if + Expr \verb+ then + Stmts \verb+ else + Stmts \verb+ end+$$
-$$Stmt \to \verb+while + Expr \verb+ do + Stmts \verb+ end+$$
-$$Stmt \to \verb+begin + Stmts \verb+ end+$$
-$$Stmts \to Stmts \verb+ ; + Stmt$$
-$$Stmts \to Stmt$$
-$$Expr \to Expr \verb| + | T$$
-$$Expr \to T$$
-$$T \to id$$
-$$T \to num$$
-$$id \to \verb|[a-zA-Z]+|$$
-$$num \to \verb|[0-9]+|$$
+\begin{align*}
+Start \to&~Stmt\\
+Stmt \to&~id~\mathtt{=}~Expr\\
+ |&~\mathtt{if}~Expr~\mathtt{then}~Stmts~\mathtt{end}\\
+ |&~\mathtt{if}~Expr~\mathtt{then}~Stmts~\mathtt{else}~Stmts~\mathtt{end}\\
+ |&~\mathtt{while}~Expr~\mathtt{do}~Stmts~\mathtt{end}\\
+ |&~\mathtt{begin}~Stmts~\mathtt{end}\\
+Stmts \to&~Stmts~\mathtt{;}~Stmt\\
+|&~Stmt\\
+Expr \to&~Expr~\mathtt{+}~T\\
+|&~T\\
+T \to&~id\\
+|&~num\\
+id \to&~\mathtt{[a-zA-Z]+}\\
+num \to&~\mathtt{[0-9]+}
+\end{align*}
 
 \question This language is:
 
@@ -172,7 +173,7 @@ $$num \to \verb|[0-9]+|$$
 \choice LL(k)
 \choice Context-free
 \choice Context-sensitive
-\choice Context-free and Context-sensitive
+\choice Context-free, Context-sensitive
 \end{oneparchoices}
 
 \answerline
@@ -196,6 +197,7 @@ $$num \to \verb|[0-9]+|$$
 \choice \verb+;+, \verb+end+
 \choice \verb+;+, \verb+end+, \verb|+|
 \choice \verb+;+, \verb+end+, \verb|+|, $num$
+\choice \verb+;+, \verb+end+, \verb+else+, end of string
 \end{choices}
 
 \answerline
