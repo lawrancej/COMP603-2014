@@ -21,6 +21,7 @@ Build something useful upon tools like http://clang.llvm.org/docs/Tooling.html[c
 
 * Automated refactoring tool for existing languages to serve education and large projects
 * Source to source translation (say from C\++ to Java, Python2 to Python3, etc.)
+* Static-analysis like tool that works with existing code review systems (e.g., with Gerrit, Gitlab, Github, etc.).
 * Search engine for identifiers and literals in code that makes good recommendations, (e.g., http://en.wikipedia.org/wiki/Pagerank[PageRank])
 * Something like http://en.wikipedia.org/wiki/QuickCheck[Quickcheck], but can http://en.wikipedia.org/wiki/Characterization_test[generate characterization tests automatically] and efficiently
 
