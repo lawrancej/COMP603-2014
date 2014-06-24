@@ -32,7 +32,7 @@ Also, let's get teams formed for our final project.
 === Hints
 
 * http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fdom%2FASTVisitor.html[Documentation for Eclipse's ASTVisitor will come in handy]
-* To run +jdt-project+ in Eclipse, you'll need to supply the root folder of a Java project to analyze as a parameter to +main+. To do this, go to 'Run Configurations' -> 'Main' -> 'Arguments' -> 'Program arguments'. Enter the path to a Java project. Click 'Run'.
+* To run +jdt-project+ in Eclipse, you'll need to supply the root folder of a Java project to analyze as a parameter to +main+. To do this, go to 'Run Configurations' -> 'Main' -> 'Arguments' -> 'Program arguments'. Enter the path to a Java project. Click 'Run'. If you have no ideas, you can supply the source of +jdt-project+ to itself. Huzzah!
 
 == June 23
 Hand back midterms
