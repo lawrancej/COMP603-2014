@@ -11,6 +11,16 @@ Perform static analysis of Java code.
 
 . http://www.graphviz.org/Download..php[Download and install Graphviz]
 . Fork and clone https://github.com/COMP603/jdt-project[jdt-project].
+. Next, add +JAVA_HOME+ to your environment variables:
++
+'Computer' -> 'System properties' -> 'Advanced system settings' -> 'Environment Variables...' -> 'User variables' -> 'New...'
++
+Variable name: +JAVA_HOME+
++
+Variable value: +C:\Program Files\Java\jdk1.8.0_05+
+. Click OK, OK, OK.
++
+You may need to close and reopen Git Bash.
 . Import the project into eclipse.
 +
 ----
