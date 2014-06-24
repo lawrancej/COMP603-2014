@@ -13,14 +13,14 @@ Perform static analysis of Java code.
 . Fork and clone https://github.com/COMP603/jdt-project[jdt-project].
 . Next, add +JAVA_HOME+ to your environment variables:
 +
-Windows: Search for "environment variables" and click "Edit environment variables for your account"
+Windows: Search for "environment variables" and click 'Edit the system environment variables'. Click 'Environment Variables...' -> 'New...'
 +
 Variable name: +JAVA_HOME+
 +
 Variable value: +C:\Program Files\Java\jdk1.8.0_05+ (or whatever version you're using)
 . Click OK, OK, OK.
 +
-You may need to close and reopen Git Bash.
+Close and reopen Git Bash. If you get the same error, https://www.youtube.com/watch?v=nn2FB1P_Mn8&feature=kp[try turning it off and on again]
 . Import the project into eclipse.
 +
 ----
