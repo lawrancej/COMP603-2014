@@ -13,7 +13,7 @@ Perform static analysis of Java code.
 . Fork and clone https://github.com/COMP603/jdt-project[jdt-project].
 . Next, add +JAVA_HOME+ to your environment variables:
 +
-'Computer' -> 'System properties' -> 'Advanced system settings' -> 'Environment Variables...' -> 'User variables' -> 'New...'
+Windows: Search for "environment variables" and click "Edit environment variables for your account"
 +
 Variable name: +JAVA_HOME+
 +
