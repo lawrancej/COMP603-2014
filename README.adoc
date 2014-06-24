@@ -17,7 +17,7 @@ Perform static analysis of Java code.
 +
 Variable name: +JAVA_HOME+
 +
-Variable value: +C:\Program Files\Java\jdk1.8.0_05+
+Variable value: +C:\Program Files\Java\jdk1.8.0_05+ (or whatever version you're using)
 . Click OK, OK, OK.
 +
 You may need to close and reopen Git Bash.
