@@ -28,7 +28,9 @@ Close and reopen Git Bash. If you get the same error, https://www.youtube.com/wa
 ----
 +
 'File' -> 'Import' -> 'General' -> 'Existing projects into workspace'
-. Read through the code.
+. Read through the code. Open +Main+ and run it. Nothing will happen. You'll need to supply the root folder of a Java project to +main+.
++
+Go to 'Run Configurations' -> 'Main' -> 'Arguments' -> 'Program arguments'. Enter the path to a Java project. Click 'Run'. If you have no other Java projects, you can supply the source of +jdt-project+ to itself. Huzzah!
 . Modify AstVisitor to do one of the following (pick one):
 
 * Generate UML class diagram for source code (Show members of classes) http://www.graphviz.org/content/datastruct[See this for insipration]
@@ -40,10 +42,9 @@ Close and reopen Git Bash. If you get the same error, https://www.youtube.com/wa
 
 Also, let's get teams formed for our final project.
 
-=== Hints
+=== Hint
 
 * http://help.eclipse.org/indigo/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2Fdom%2FASTVisitor.html[Documentation for Eclipse's ASTVisitor will come in handy]
-* To run +jdt-project+ in Eclipse, you'll need to supply the root folder of a Java project to analyze as a parameter to +main+. To do this, go to 'Run Configurations' -> 'Main' -> 'Arguments' -> 'Program arguments'. Enter the path to a Java project. Click 'Run'. If you have no ideas, you can supply the source of +jdt-project+ to itself. Huzzah!
 
 == June 23
 Hand back midterms
