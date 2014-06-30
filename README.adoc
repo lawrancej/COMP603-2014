@@ -3,6 +3,7 @@
 == June 30
 
 * https://docs.google.com/forms/d/1rbiWuLa5gRyKLpn8oWfkl5nxEP8g7II8xk4yQdPnNfA/viewform[BCOS curriculum feedback]
+* Also, for the folks interested in using clang, here's a https://github.com/COMP603/clang-project[clang-project].
 
 == June 27
 Off-site meeting
