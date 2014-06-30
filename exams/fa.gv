@@ -1,0 +1,17 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = none]; 0 [label = ""];
+	node [shape = doublecircle]; 4; 6;
+	node [shape = circle];
+	0 -> 1; // start state
+	1 -> 2 [ label = "&epsilon;" ];
+	1 -> 2 [ label = "-" ];
+	2 -> 4 [ label = "0" ];
+	2 -> 3 [ label = "digit [1-9]" ];
+	3 -> 3 [ label = "digit [0-9]" ];
+	3 -> 4 [ label = "&epsilon;" ];
+	4 -> 5 [ label = "literal dot ." ];
+	5 -> 6 [ label = "digit [0-9]" ];
+	6 -> 6 [ label = "digit [0-9]" ];
+}

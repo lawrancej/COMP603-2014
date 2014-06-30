@@ -1,0 +1,259 @@
+\documentclass[addpoints]{exam}
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage{amsmath}
+
+\title{Compiler Design Midterm}
+\author{NAME: \underline{\hspace{10cm}}}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Directions}
+Read carefully. Work individually. Write legibly. Check work. Complete in 1 hour.
+\begin{description}[leftmargin=!,labelwidth=\widthof{\bfseries Beforehand}]
+\item[Beforehand] Visit the restroom if necessary. Close your laptop. Clear your desk. Silence your phone.
+\item[DO] Use pencil, eraser, pen, or scratch paper to complete this exam.
+\item[DO NOT] Distract others, talk, use electronic devices, notes, smoke signals, gestures, Morse code, \ldots
+\item[Confused?] \textbf{Let me come to you.} I will clarify questions. I won't answer: ``Is this right or wrong?''
+\end{description}
+
+\begin{questions}
+\section{Definitions and Examples}
+\question Match these terms to their definition or exemplars.\\
+\begin{oneparchoices}
+\choice Nondeterminism
+\choice Ambiguity
+\choice First set
+\choice Follow set
+\choice Compiler
+\choice Interpreter
+\end{oneparchoices}
+
+\begin{parts}
+\part Translates a source language into a target language \answerline
+\part Executes a source language \answerline
+\part Having more than one option about which state to transition to \answerline
+\part More than one parse tree is possible \answerline
+\part The set of terminals appearing first in any string while deriving a nonterminal \answerline
+\part The set of terminals appearing first in any string after deriving a nonterminal \answerline
+\part Examples: \verb+gcc+, \verb+javac+ \answerline
+\part Examples: \verb+sh+, \verb+bash+, \verb+cmd+ \answerline
+%\part NFA EXAMPLE HERE \answerline
+\end{parts}
+
+\section{Chomsky Hierarchy}
+\question Match these languages to their constraints on productions, or equivalent automaton or parsing strategy.\footnote{If multiple languages match, choose the most inclusive (least constrained) language that matches.}\\
+\begin{oneparchoices}
+\choice Context-free
+\choice Context-sensitive
+\choice $LL(k)$
+\choice $LR(k)$
+\choice Recursively-enumerable
+\choice Regular
+\end{oneparchoices}
+
+\begin{parts}
+\part No constraints on productions. \answerline
+
+\part Productions are constrained to: $A \to a$ or $A \to aB$, where $a$ is a terminal and $A, B$ are nonterminals. \answerline
+
+\part Finite automata. \answerline
+
+\part Recursive-descent parsing. \answerline
+
+\part Shift-reduce parsing. \answerline % B
+
+\part Unambiguous. \answerline % E
+
+\part Nonterminals derive sequences of terminals and nonterminals. \answerline % D
+
+\part Equivalent to Brainfuck (linearly-bounded Turing machines).\answerline
+
+\part Pushdown automata (finite state machine with a stack).\answerline
+
+\part Turing machines.\answerline
+
+\part No common prefixes are allowed in productions.\answerline
+
+\part No left recursion is allowed in productions. \answerline
+
+\end{parts}
+
+\pagebreak
+\section{Regular languages}
+Refer to this finite automaton to answer questions in this section. 
+
+\includegraphics[width=6.2in]{fa}
+
+\question Which of these strings does this finite automaton accept?
+
+\begin{oneparchoices}
+\choice \verb$0.$
+\choice \verb$-.5$
+\choice \verb$007$
+\choice \verb$1.$
+\choice \verb$1$
+\end{oneparchoices}
+
+\answerline
+
+\question Which regular expression matches the same language as the finite automaton?
+
+\begin{choices}
+\choice \verb$[-]?(0|[1-9][0-9]*)\.[0-9]+$
+\choice \verb$[-]?0|[1-9][0-9]*\.[0-9]+$
+\choice \verb$[-]?(0|[1-9][0-9]*)(\.[0-9]+)?$
+\choice \verb$[-]?(0|[1-9][0-9]*)\.[0-9]+?$
+\choice \verb$[-]?0|[1-9][0-9]*\.[0-9]+?$
+\choice None of the above
+\end{choices}
+
+\answerline
+
+\question Let $L$ be the language the finite automaton matches. What is the derivative of L, with respect to \verb$3$?
+
+\begin{choices}
+\choice \verb$[0-9]*\.[0-9]+$
+\choice \verb$[0-9]*(\.[0-9]+)?$
+\choice \verb$[0-9]*\.[0-9]+?$
+\choice \verb$[1-9][0-9]*\.[0-9]*$
+\choice $\emptyset$
+\end{choices}
+
+\answerline
+
+\question Let $L$ be the language the finite automaton matches. What is the derivative of L, with respect to \verb$a$?
+
+\begin{choices}
+\choice \verb$-?(0|[1-9][0-9]*)\.[0-9]+$
+\choice \verb$-?0|[1-9][0-9]*\.[0-9]+$
+\choice \verb$[0-9]+$
+\choice \verb$\.[0-9]+$
+\choice \verb$0|[1-9][0-9]*\.[0-9]+$
+\choice $\emptyset$
+\end{choices}
+
+\answerline
+
+\question This finite automaton is:
+\begin{oneparchoices}
+\choice deterministic
+\choice non-deterministic
+\end{oneparchoices}
+\answerline
+\pagebreak
+
+\section{Grammars and parsing}
+Refer to this grammar to answer questions in this section.
+\begin{align*}
+Start \to&~Stmt\\
+Stmt \to&~id~\mathtt{=}~Expr\\
+ |&~\mathtt{if}~Expr~\mathtt{then}~Stmts~\mathtt{end}\\
+ |&~\mathtt{if}~Expr~\mathtt{then}~Stmts~\mathtt{else}~Stmts~\mathtt{end}\\
+ |&~\mathtt{while}~Expr~\mathtt{do}~Stmts~\mathtt{end}\\
+ |&~\mathtt{begin}~Stmts~\mathtt{end}\\
+Stmts \to&~Stmts~\mathtt{;}~Stmt\\
+|&~Stmt\\
+Expr \to&~Expr~\mathtt{+}~T\\
+|&~T\\
+T \to&~id\\
+|&~num\\
+id \to&~\mathtt{[a-zA-Z]+}\\
+num \to&~\mathtt{[0-9]+}
+\end{align*}
+
+\question This grammar is:
+
+\begin{oneparchoices}
+\choice Regular
+\choice LL(k)
+\choice Context-free
+\choice Context-sensitive
+\choice Context-free, Context-sensitive
+\end{oneparchoices}
+
+\answerline
+
+\question What is $First(Stmt)$?
+
+\begin{choices}
+\choice $id$, $num$ \verb+if+, \verb+while+, \verb+begin+, \verb|+|, \verb+;+, \verb+=+
+\choice $id$, \verb+if+, \verb+while+, \verb+begin+, \verb|+|, \verb+;+, \verb+=+
+\choice $id$, \verb+if+, \verb+while+, \verb+begin+, \verb|+|, \verb+;+
+\choice $id$, \verb+if+, \verb+while+, \verb+begin+, \verb|+|
+\choice $id$, \verb+if+, \verb+while+, \verb+begin+
+\end{choices}
+
+\answerline
+
+\question What is $Follow(Stmt)$?
+
+\begin{choices}
+\choice \verb+end+
+\choice \verb+;+, \verb+end+
+\choice \verb+;+, \verb+end+, \verb|+|
+\choice \verb+;+, \verb+end+, \verb|+|, $num$
+\choice \verb+;+, \verb+end+, \verb+else+, end of string
+\end{choices}
+
+\answerline
+
+\question Which sequence of shifts and reductions will eventually parse \verb+x = 2+?
+
+\begin{choices}
+\choice shift $id \verb+ x+$, shift \verb+=+, shift $num \verb+ 2+$, reduce $num \to T$, $\ldots$
+\choice shift $id \verb+ x+$, reduce $id \to T$, reduce $T \to Expr$, shift \verb+=+, $\ldots$
+\choice shift $id \verb+ x+$, shift \verb+=+, reduce $id \to T$, shift $num \verb+ 2+$, $\ldots$
+\choice shift $id \verb+ x+$, shift \verb+=+, shift $num \verb+ 2+$, reduce $num \to Expr$, $\ldots$
+\end{choices}
+
+\answerline
+\pagebreak
+
+\section{Compiler phases}
+
+\question Which compiler phase is typically implemented as a list of regular expressions?
+
+\begin{oneparchoices}
+\choice Scanner/Lexer/Tokenizer
+\choice Parser
+\choice Type checker
+\choice Optimizer
+\choice Code generator
+\end{oneparchoices}
+
+\answerline
+
+\question Which compiler phase(s) is/are typically implemented as visitor?
+
+\begin{choices}
+\choice Scanner/Lexer/Tokenizer
+\choice Parser
+\choice Type checker
+\choice Optimizer
+\choice Code generator
+\choice Type checker, optimizer, code generator
+\end{choices}
+
+\answerline
+
+\question From source to machine code, what are the compiler phases, in order?
+
+\begin{choices}
+\choice Scanning, Parsing, Optimization,  Type checking, Code generation
+\choice Parsing, Scanning, Optimization, Type checking, Code generation
+\choice Scanning, Parsing, Type checking, Optimization, Code generation
+\choice Optimization, Scanning, Parsing, Type checking, Code generation
+\end{choices}
+
+\answerline
+
+\end{questions}
+
+This exam has 33 answers total (including a blank for your name), so each answer is worth $\approx 3$ points. Check your work. See you tomorrow!
+
+\end{document}
