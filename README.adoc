@@ -5,7 +5,7 @@ Informally, I'd like to know your end-goal and the steps you'll need to get ther
 
 . Figure out what it is that you want to do.
 . Either create or fork an existing repository for said thing.
-. Flesh out the things you expect to implement (your goals) in your project's README file somewhere.
+. Flesh out the things you and your team expect to implement (your goals) in your project's README file somewhere.
 . Describe your team on your https://github.com/orgs/COMP603/teams[Team page].
 . Use the issue tracker to assign tasks to folks on your team.
 
