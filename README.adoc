@@ -1,5 +1,11 @@
 = COMP603 (Compiler Design)
 
+== July 7
+Informally, I'd like to know your end-goal and the steps you'll need to get there.
+
+. Flesh out the things you expect to implement (your goals) in your project's README file somewhere.
+. Use the issue tracker to assign tasks to folks on your team.
+
 == June 30
 
 * https://docs.google.com/forms/d/1rbiWuLa5gRyKLpn8oWfkl5nxEP8g7II8xk4yQdPnNfA/viewform[BCOS curriculum feedback]
