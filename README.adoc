@@ -8,7 +8,7 @@ Informally, I'd like to know your end-goal and the steps you'll need to get ther
 . Flesh out the things you expect to implement (your goals) in your project's README file somewhere.
 . Use the issue tracker to assign tasks to folks on your team.
 
-*Hint*: Please don't start from scratch if possible. Try to leverage something that already exists, because it'll be more impressive in the end.
+*Hint*: Please don't start from scratch if possible. Try to leverage something that already exists, because it'll be more impressive in the end. If you insist on working from scratch, please study something that already exists so that you can distinguish what you're doing from what has already been done.
 
 == June 30
 
