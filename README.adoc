@@ -3,8 +3,12 @@
 == July 7
 Informally, I'd like to know your end-goal and the steps you'll need to get there.
 
+. Figure out what it is that you want to do.
+. Either create or fork an existing repository for said thing.
 . Flesh out the things you expect to implement (your goals) in your project's README file somewhere.
 . Use the issue tracker to assign tasks to folks on your team.
+
+*Hint*: Please don't start from scratch if possible. Try to leverage something that already exists, because it'll be more impressive in the end.
 
 == June 30
 
