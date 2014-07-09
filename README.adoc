@@ -10,6 +10,8 @@ During each lab period, each team should have answers to these questions.
 * What are you struggling with or what obstacles do you face?
 * What do you plan to achieve by next week?
 
+https://github.com/lawrancej/COMP603-2014/blob/master/Rubrics.pdf?raw=true[Rubrics]
+
 == July 8
 Get your stuff together.
 
