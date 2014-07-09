@@ -1,5 +1,18 @@
 = COMP603 (Compiler Design)
 
+== July 9
+From July 15 through August 5, we will use lab time to update each other on our progress.
+
+During each lab period, each team should have answers to these questions.
+
+* What did you do? (Nothing isn't a good answer to that question)
+* Did you achieve what you set out to achieve from the prior week?
+* What are you struggling with or what obstacles do you face?
+* What do you plan to achieve by next week?
+
+== July 8
+Get your stuff together.
+
 == July 7
 Informally, I'd like to know your end-goal and the steps you'll need to get there.
 
