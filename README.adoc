@@ -1,6 +1,7 @@
 = COMP603 (Compiler Design)
 
 == July 9
+
 From July 15 through August 5, we will use lab time to update each other on our progress.
 
 During each lab period, each team should have answers to these questions.
@@ -11,6 +12,61 @@ During each lab period, each team should have answers to these questions.
 * What do you plan to achieve by next week?
 
 https://github.com/lawrancej/COMP603-2014/blob/master/Rubrics.pdf?raw=true[Rubrics]
+
+=== Single static assignment (SSA) Form
+
+http://en.wikipedia.org/wiki/Static_single_assignment_form[SSA] is a transformation on code that is a prerequisite for many low-level optimizations, such as dead/duplicate code elimination.
+Think of it like version control for variables.
+Each variable gets a new version number when an assignment is made, hence single assignment.
+If we have multiple branches (i.e., loops or conditionals), we need to merge different variable versions together (denoted by the phi function).
+
+|===
+
+|Pseudocode |SSA form
+
+a|Basic block:
+
+----
+a = 5
+a = a + 10
+print a
+----
+
+a|SSA Basic block:
+
+----
+a_0 = 5
+a_1 = a_0 + 10
+print a_1
+----
+
+a|Conditional
+
+----
+a = 5
+if (a < 10) {
+   a++
+} else {
+   a--
+}
+a = a * 2
+print a
+----
+
+a|SSA conditional
+
+----
+a_0 = 5
+if (a_0 < 10) {
+   a_1 = a_0 + 1
+} else {
+   a_2 = a_0 - 1
+}
+a_3 = phi(a_1,a_2) * 2
+print a_3
+----
+
+|===
 
 == July 8
 Get your stuff together.
