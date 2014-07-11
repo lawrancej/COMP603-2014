@@ -2,7 +2,7 @@
 
 == July 11
 
-IMPORTANT: Free slurpees at 7-11!
+WARNING: The commuter rail train was delayed over an hour this morning. Sorry 8am section! To make it up to you, have a free small slurpee at 7-11 today!
 
 === Runtime support: Garbage collection
 
