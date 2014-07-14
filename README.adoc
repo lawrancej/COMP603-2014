@@ -1,5 +1,20 @@
 = COMP603 (Compiler Design)
 
+== July 15
+Status update for all.
+
+== July 14
+
+=== Random awesomeness
+
+* https://github.com/oyvindrobertsen/awesome-awesome[Awesome stuff for the folks who show up]
+* https://www.youtube.com/watch?v=Ki_Af_o9Q9s[Awesome landing]
+* http://www.jmalsbury.com/how-to-talk-to-a-36-year-old-space-probe-isee-3-with-gnu-radio-a-usrp-and-a-big-dish/[Awesome talking to an old space probe]
+
+=== Virtual machines
+
+http://jasmin.sourceforge.net/[Let's take a look at Java's JVM, which is similar to .NET CLR]
+
 == July 11
 
 WARNING: The commuter rail train was delayed over an hour this morning. Sorry 8am section! To make it up to you, have a free small slurpee at 7-11 today!
