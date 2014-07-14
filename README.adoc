@@ -5,11 +5,18 @@ Status update for all.
 
 == July 14
 
-=== Random awesomeness
+=== Random acts of awesomeness
 
-* https://github.com/oyvindrobertsen/awesome-awesome[Awesome stuff for the folks who show up]
+* http://amiawesome.com/[Am I awesome?]
+* https://github.com/oyvindrobertsen/awesome-awesome[Of course you are, so here's awesome stuff for the folks who show up]
 * https://www.youtube.com/watch?v=Ki_Af_o9Q9s[Awesome landing]
 * http://www.jmalsbury.com/how-to-talk-to-a-36-year-old-space-probe-isee-3-with-gnu-radio-a-usrp-and-a-big-dish/[Awesome talking to an old space probe]
+
+=== TL;DR awesomeness
+
+* https://www.youtube.com/channel/UC2bkHVIDjXS7sgrgjFtzOXQ[The engineer guy]
+* https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA[Veritasium]
+* https://www.youtube.com/channel/UC6nSFpj9HTCZ5t-N3Rm3-HA[VSauce]
 
 === Virtual machines
 
