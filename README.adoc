@@ -3,6 +3,12 @@
 == July 15
 Status update for all.
 
+* Who are you working with, if anybody?
+* What are you working on?
+* What have you done so far?
+* What do you hope to accomplish by next week? How? (Who's doing what, if this is a team?)
+* What do you need to move forward?
+
 == July 14
 
 === Random acts of awesomeness
@@ -17,6 +23,7 @@ Status update for all.
 * https://www.youtube.com/channel/UC2bkHVIDjXS7sgrgjFtzOXQ[The engineer guy]
 * https://www.youtube.com/channel/UCHnyfMqiRRG1u-2MsSQLbXA[Veritasium]
 * https://www.youtube.com/channel/UC6nSFpj9HTCZ5t-N3Rm3-HA[VSauce]
+* https://www.youtube.com/user/CGPGrey[CGP Grey]
 
 === Virtual machines
 
