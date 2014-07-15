@@ -1,5 +1,11 @@
 = COMP603 (Compiler Design)
 
+== July 18
+No class today.
+
+== July 16
+Stuff.
+
 == July 15
 Status update for all.
 
