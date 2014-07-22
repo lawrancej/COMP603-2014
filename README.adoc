@@ -1,5 +1,16 @@
 = COMP603 (Compiler Design)
 
+== July 22
+Status update for all.
+
+* What are you working on?
+* What have you done so far? Did you meet your expectations for this week yet?
+* What do you hope to accomplish by next week? How? (Who's doing what, if this is a team?)
+* What do you need to move forward?
+
+== July 21
+Work on projects.
+
 == July 18
 No class today.
 
