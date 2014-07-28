@@ -1,5 +1,9 @@
 = COMP603 (Compiler Design)
 
+== July 31
+
+* https://docs.google.com/document/d/1xEF6lW6w3DVJBt3mTke7meODdppf78bI6xAx3qEWm48/edit[Docs]
+
 == July 22
 Status update for all.
 
