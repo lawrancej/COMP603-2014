@@ -1,5 +1,11 @@
 = COMP603 (Compiler Design)
 
+== August 4
+Random stuff.
+
+* http://sites.ieee.org/scv-cs/files/2013/03/Right-SizingPrecision1.pdf[End the tyranny of word size alignment]
+* http://cacm.acm.org/magazines/2012/10/155552-the-tyranny-of-the-clock/fulltext[End the tyranny of the clock]
+
 == July 31
 
 * https://docs.google.com/document/d/1xEF6lW6w3DVJBt3mTke7meODdppf78bI6xAx3qEWm48/edit[Docs]
