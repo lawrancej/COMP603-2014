@@ -1,4 +1,4 @@
-\documentclass[addpoints]{exam}
+\documentclass[addpoints,answers]{exam}
 
 \usepackage{graphicx}
 \usepackage{epstopdf}
@@ -34,15 +34,14 @@ Read carefully. Work individually. Write legibly. Check work. Complete in 1 hour
 \end{oneparchoices}
 
 \begin{parts}
-\part Translates a source language into a target language \answerline
-\part Executes a source language \answerline
-\part Having more than one option about which state to transition to \answerline
-\part More than one parse tree is possible \answerline
-\part The set of terminals appearing first in any string while deriving a nonterminal \answerline
-\part The set of terminals appearing first in any string after deriving a nonterminal \answerline
-\part Examples: \verb+gcc+, \verb+javac+ \answerline
-\part Examples: \verb+sh+, \verb+bash+, \verb+cmd+ \answerline
-%\part NFA EXAMPLE HERE \answerline
+\part Translates a source language into a target language \answerline[E]
+\part Executes a source language \answerline[F]
+\part Having more than one option about which state to transition to \answerline[A]
+\part More than one parse tree is possible \answerline[B]
+\part The set of terminals appearing first in any string while deriving a nonterminal \answerline[C]
+\part The set of terminals appearing first in any string after deriving a nonterminal \answerline[D]
+\part Examples: \verb+gcc+, \verb+javac+ \answerline[E]
+\part Examples: \verb+sh+, \verb+bash+, \verb+cmd+ \answerline[F]
 \end{parts}
 
 \section{Chomsky Hierarchy}
@@ -57,29 +56,29 @@ Read carefully. Work individually. Write legibly. Check work. Complete in 1 hour
 \end{oneparchoices}
 
 \begin{parts}
-\part No constraints on productions. \answerline
+\part No constraints on productions. \answerline[E]
 
-\part Productions are constrained to: $A \to a$ or $A \to aB$, where $a$ is a terminal and $A, B$ are nonterminals. \answerline
+\part Productions are constrained to: $A \to a$ or $A \to aB$, where $a$ is a terminal and $A, B$ are nonterminals. \answerline[F]
 
-\part Finite automata. \answerline
+\part Finite automata. \answerline[F]
 
-\part Recursive-descent parsing. \answerline
+\part Recursive-descent parsing. \answerline[C]
 
-\part Shift-reduce parsing. \answerline % B
+\part Shift-reduce parsing. \answerline[D]
 
-\part Unambiguous. \answerline % E
+\part Unambiguous. \answerline[D]
 
-\part Nonterminals derive sequences of terminals and nonterminals. \answerline % D
+\part Nonterminals derive sequences of terminals and nonterminals. \answerline[A]
 
-\part Equivalent to Brainfuck (linearly-bounded Turing machines).\answerline
+\part Equivalent to Brainfuck (linearly-bounded Turing machines).\answerline[B]
 
-\part Pushdown automata (finite state machine with a stack).\answerline
+\part Pushdown automata (finite state machine with a stack).\answerline[A]
 
-\part Turing machines.\answerline
+\part Turing machines.\answerline[E]
 
-\part No common prefixes are allowed in productions.\answerline
+\part No common prefixes are allowed in productions.\answerline[C]
 
-\part No left recursion is allowed in productions. \answerline
+\part No left recursion is allowed in productions. \answerline[C]
 
 \end{parts}
 
@@ -99,7 +98,7 @@ Refer to this finite automaton to answer questions in this section.
 \choice \verb$1$
 \end{oneparchoices}
 
-\answerline
+\answerline[E]
 
 \question Which regular expression matches the same language as the finite automaton?
 
@@ -112,7 +111,7 @@ Refer to this finite automaton to answer questions in this section.
 \choice None of the above
 \end{choices}
 
-\answerline
+\answerline[C]
 
 \question Let $L$ be the language the finite automaton matches. What is the derivative of L, with respect to \verb$3$?
 
@@ -124,7 +123,7 @@ Refer to this finite automaton to answer questions in this section.
 \choice $\emptyset$
 \end{choices}
 
-\answerline
+\answerline[B]
 
 \question Let $L$ be the language the finite automaton matches. What is the derivative of L, with respect to \verb$a$?
 
@@ -137,14 +136,14 @@ Refer to this finite automaton to answer questions in this section.
 \choice $\emptyset$
 \end{choices}
 
-\answerline
+\answerline[F]
 
 \question This finite automaton is:
 \begin{oneparchoices}
 \choice deterministic
 \choice non-deterministic
 \end{oneparchoices}
-\answerline
+\answerline[B]
 \pagebreak
 
 \section{Grammars and parsing}
@@ -176,7 +175,7 @@ num \to&~\mathtt{[0-9]+}
 \choice Context-free, Context-sensitive
 \end{oneparchoices}
 
-\answerline
+\answerline[E]
 
 \question What is $First(Stmt)$?
 
@@ -188,7 +187,7 @@ num \to&~\mathtt{[0-9]+}
 \choice $id$, \verb+if+, \verb+while+, \verb+begin+
 \end{choices}
 
-\answerline
+\answerline[E]
 
 \question What is $Follow(Stmt)$?
 
@@ -200,7 +199,7 @@ num \to&~\mathtt{[0-9]+}
 \choice \verb+;+, \verb+end+, \verb+else+, end of string
 \end{choices}
 
-\answerline
+\answerline[E]
 
 \question Which sequence of shifts and reductions will eventually parse \verb+x = 2+?
 
@@ -211,7 +210,7 @@ num \to&~\mathtt{[0-9]+}
 \choice shift $id \verb+ x+$, shift \verb+=+, shift $num \verb+ 2+$, reduce $num \to Expr$, $\ldots$
 \end{choices}
 
-\answerline
+\answerline[A]
 \pagebreak
 
 \section{Compiler phases}
@@ -226,7 +225,7 @@ num \to&~\mathtt{[0-9]+}
 \choice Code generator
 \end{oneparchoices}
 
-\answerline
+\answerline[A]
 
 \question Which compiler phase(s) is/are typically implemented as visitor?
 
@@ -239,7 +238,7 @@ num \to&~\mathtt{[0-9]+}
 \choice Type checker, optimizer, code generator
 \end{choices}
 
-\answerline
+\answerline[F]
 
 \question From source to machine code, what are the compiler phases, in order?
 
@@ -250,7 +249,7 @@ num \to&~\mathtt{[0-9]+}
 \choice Optimization, Scanning, Parsing, Type checking, Code generation
 \end{choices}
 
-\answerline
+\answerline[C]
 
 \end{questions}
 
